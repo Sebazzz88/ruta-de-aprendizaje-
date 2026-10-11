@@ -1,0 +1,727 @@
+{
+  "id": "c",
+  "units": [
+    {
+      "level": "regular",
+      "title": "Primeros pasos",
+      "description": "Tu primer programa en C y variables.",
+      "lessons": [
+        {
+          "id": "c-1-1",
+          "title": "Hola, mundo",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿Qué función imprime texto en C?",
+              "options": [
+                "printf()",
+                "print()",
+                "cout",
+                "echo()"
+              ],
+              "answer": 0,
+              "explanation": "printf() viene de la biblioteca stdio.h."
+            },
+            {
+              "type": "fill",
+              "prompt": "Incluye la biblioteca correcta",
+              "code": "#include <___>\n\nint main(void) {\n  printf(\"Hola\\n\");\n  return 0;\n}",
+              "options": [
+                "stdio.h",
+                "iostream",
+                "stdlib.h",
+                "print.h"
+              ],
+              "answer": [
+                "stdio.h"
+              ],
+              "explanation": "stdio.h (standard input/output) declara printf."
+            },
+            {
+              "type": "output",
+              "code": "printf(\"%d\", 3 + 4);",
+              "options": [
+                "7",
+                "3 + 4",
+                "%d",
+                "34"
+              ],
+              "answer": 0,
+              "explanation": "%d se reemplaza por el entero 3 + 4."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué función es el punto de entrada de un programa en C?",
+              "options": [
+                "main",
+                "start",
+                "init",
+                "program"
+              ],
+              "answer": 0,
+              "explanation": "Todo programa en C empieza a ejecutarse en main."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena el programa",
+              "lines": [
+                "#include <stdio.h>",
+                "int main(void) {",
+                "  printf(\"Hola\");",
+                "  return 0;",
+                "}"
+              ],
+              "explanation": "Primero el include, luego main con su cuerpo."
+            }
+          ]
+        },
+        {
+          "id": "c-1-2",
+          "title": "Variables",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿Cómo declaras un entero x con valor 5?",
+              "options": [
+                "int x = 5;",
+                "x = 5",
+                "integer x = 5;",
+                "var x = 5;"
+              ],
+              "answer": 0,
+              "explanation": "En C siempre se indica el tipo: int x = 5;"
+            },
+            {
+              "type": "output",
+              "code": "int edad = 20;\nedad = edad + 1;\nprintf(\"%d\", edad);",
+              "options": [
+                "21",
+                "20",
+                "%d",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "A 20 se le suma 1."
+            },
+            {
+              "type": "fill",
+              "prompt": "Imprime el precio con un decimal",
+              "code": "float precio = 9.5;\nprintf(\"___\", precio);",
+              "options": [
+                "%.1f",
+                "%d",
+                "%s",
+                "%c"
+              ],
+              "answer": [
+                "%.1f"
+              ],
+              "explanation": "%f imprime números con decimales; .1 limita a un decimal: 9.5."
+            },
+            {
+              "type": "output",
+              "code": "int a = 7, b = 2;\nprintf(\"%d\", a / b);",
+              "options": [
+                "3",
+                "3.5",
+                "4",
+                "3.0"
+              ],
+              "answer": 0,
+              "explanation": "Entre enteros, / descarta los decimales."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para que imprima 35",
+              "lines": [
+                "int precio = 10;",
+                "int total = precio * 3;",
+                "total = total + 5;",
+                "printf(\"%d\", total);"
+              ],
+              "explanation": "10 × 3 = 30, más 5 = 35."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "medio",
+      "title": "Tipos y decisiones",
+      "description": "Tipos, operadores y condicionales.",
+      "lessons": [
+        {
+          "id": "c-2-1",
+          "title": "Tipos y operadores",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿Qué tipo usarías para un carácter como 'a'?",
+              "options": [
+                "char",
+                "string",
+                "letter",
+                "byte"
+              ],
+              "answer": 0,
+              "explanation": "char guarda un solo carácter."
+            },
+            {
+              "type": "output",
+              "code": "printf(\"%d\", 17 % 5);",
+              "options": [
+                "2",
+                "3",
+                "3.4",
+                "12"
+              ],
+              "answer": 0,
+              "explanation": "% da el resto: 17 = 5 × 3 + 2."
+            },
+            {
+              "type": "output",
+              "code": "int x = 5;\nx += 3;\nprintf(\"%d\", x);",
+              "options": [
+                "8",
+                "5",
+                "3",
+                "53"
+              ],
+              "answer": 0,
+              "explanation": "x += 3 es lo mismo que x = x + 3."
+            },
+            {
+              "type": "fill",
+              "prompt": "Guarda la letra A",
+              "code": "char letra = ___;\nprintf(\"%c\", letra);",
+              "options": [
+                "'A'",
+                "\"A\"",
+                "A",
+                "65.0"
+              ],
+              "answer": [
+                "'A'"
+              ],
+              "explanation": "Los caracteres van entre comillas simples; las dobles son para cadenas."
+            },
+            {
+              "type": "output",
+              "code": "printf(\"%d\", 5 > 3);",
+              "options": [
+                "1",
+                "true",
+                "0",
+                "5"
+              ],
+              "answer": 0,
+              "explanation": "En C, una comparación verdadera vale 1 y una falsa vale 0."
+            }
+          ]
+        },
+        {
+          "id": "c-2-2",
+          "title": "Condicionales",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "int x = 7;\nif (x > 5) {\n  printf(\"grande\");\n} else {\n  printf(\"pequeño\");\n}",
+              "options": [
+                "grande",
+                "pequeño",
+                "Error",
+                "Nada"
+              ],
+              "answer": 0,
+              "explanation": "7 es mayor que 5."
+            },
+            {
+              "type": "fill",
+              "prompt": "Completa la condición",
+              "code": "int edad = 18;\n___ (edad >= 18) {\n  printf(\"Adulto\");\n}",
+              "options": [
+                "if",
+                "when",
+                "for",
+                "case"
+              ],
+              "answer": [
+                "if"
+              ],
+              "explanation": "if (condición) { ... }"
+            },
+            {
+              "type": "output",
+              "code": "int n = 1;\nswitch (n) {\n  case 1: printf(\"A\");\n  case 2: printf(\"B\"); break;\n  default: printf(\"C\");\n}",
+              "options": [
+                "AB",
+                "A",
+                "ABC",
+                "B"
+              ],
+              "answer": 0,
+              "explanation": "El case 1 no tiene break, así que sigue al case 2 hasta encontrar un break."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué operador significa \"o\" lógico en C?",
+              "options": [
+                "||",
+                "&&",
+                "or",
+                "|"
+              ],
+              "answer": 0,
+              "explanation": "|| es el \"o\" lógico; | opera bit a bit."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena el programa",
+              "lines": [
+                "int nota = 8;",
+                "if (nota >= 6) {",
+                "  printf(\"Aprobado\");",
+                "} else {",
+                "  printf(\"Reprobado\");",
+                "}"
+              ],
+              "explanation": "else va justo después de cerrar el bloque del if."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "intermedio",
+      "title": "Bucles y funciones",
+      "description": "Repite tareas y crea funciones.",
+      "lessons": [
+        {
+          "id": "c-3-1",
+          "title": "Bucles",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "for (int i = 0; i < 3; i++) {\n  printf(\"%d \", i);\n}",
+              "options": [
+                "0 1 2",
+                "1 2 3",
+                "0 1 2 3",
+                "3"
+              ],
+              "answer": 0,
+              "explanation": "i vale 0, 1 y 2."
+            },
+            {
+              "type": "fill",
+              "prompt": "Completa el bucle",
+              "code": "int i = 0;\n___ (i < 3) {\n  printf(\"%d\", i);\n  i++;\n}",
+              "options": [
+                "while",
+                "loop",
+                "repeat",
+                "until"
+              ],
+              "answer": [
+                "while"
+              ],
+              "explanation": "while repite mientras la condición sea verdadera."
+            },
+            {
+              "type": "output",
+              "code": "int total = 0;\nfor (int i = 1; i <= 4; i++) {\n  total += i;\n}\nprintf(\"%d\", total);",
+              "options": [
+                "10",
+                "4",
+                "15",
+                "9"
+              ],
+              "answer": 0,
+              "explanation": "1 + 2 + 3 + 4 = 10."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué hace break dentro de un bucle?",
+              "options": [
+                "Sale del bucle",
+                "Salta a la siguiente vuelta",
+                "Termina el programa",
+                "Nada"
+              ],
+              "answer": 0,
+              "explanation": "break termina el bucle más cercano."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para imprimir 3 2 1",
+              "lines": [
+                "int n = 3;",
+                "while (n > 0) {",
+                "  printf(\"%d \", n);",
+                "  n--;",
+                "}"
+              ],
+              "explanation": "Se imprime y luego se resta 1."
+            }
+          ]
+        },
+        {
+          "id": "c-3-2",
+          "title": "Funciones",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Completa el tipo de retorno",
+              "code": "___ doble(int x) {\n  return x * 2;\n}",
+              "options": [
+                "int",
+                "void",
+                "def",
+                "function"
+              ],
+              "answer": [
+                "int"
+              ],
+              "explanation": "La función devuelve un entero."
+            },
+            {
+              "type": "output",
+              "code": "int suma(int a, int b) {\n  return a + b;\n}\n/* en main: */\nprintf(\"%d\", suma(2, 3));",
+              "options": [
+                "5",
+                "23",
+                "a + b",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "suma devuelve 2 + 3."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué es un prototipo de función?",
+              "options": [
+                "Su declaración, sin cuerpo, antes de usarla",
+                "Una función sin parámetros",
+                "Una función recursiva",
+                "Una copia de la función"
+              ],
+              "answer": 0,
+              "explanation": "Ejemplo: int suma(int a, int b); avisa al compilador que la función existe."
+            },
+            {
+              "type": "output",
+              "code": "void cambiar(int x) {\n  x = 100;\n}\n/* en main: */\nint n = 5;\ncambiar(n);\nprintf(\"%d\", n);",
+              "options": [
+                "5",
+                "100",
+                "0",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "C pasa los argumentos por valor: la función cambia una copia."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena la función",
+              "lines": [
+                "int cuadrado(int x) {",
+                "  int r = x * x;",
+                "  return r;",
+                "}"
+              ],
+              "explanation": "Primero se calcula y luego se devuelve."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "avanzado",
+      "title": "Arreglos y punteros",
+      "description": "Arreglos, cadenas y punteros.",
+      "lessons": [
+        {
+          "id": "c-4-1",
+          "title": "Arreglos y cadenas",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "int nums[] = {10, 20, 30};\nprintf(\"%d\", nums[2]);",
+              "options": [
+                "30",
+                "20",
+                "10",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Los índices empiezan en 0: [2] es el tercero."
+            },
+            {
+              "type": "output",
+              "code": "int nums[] = {1, 2, 3, 4};\nprintf(\"%zu\", sizeof(nums) / sizeof(nums[0]));",
+              "options": [
+                "4",
+                "16",
+                "1",
+                "8"
+              ],
+              "answer": 0,
+              "explanation": "Tamaño total entre tamaño de un elemento = cantidad de elementos."
+            },
+            {
+              "type": "fill",
+              "prompt": "Mide la longitud de la cadena",
+              "code": "#include <string.h>\nchar s[] = \"hola\";\nprintf(\"%zu\", ___(s));",
+              "options": [
+                "strlen",
+                "length",
+                "size",
+                "len"
+              ],
+              "answer": [
+                "strlen"
+              ],
+              "explanation": "strlen() cuenta los caracteres antes del \\0. Imprime 4."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Con qué carácter termina una cadena en C?",
+              "options": [
+                "'\\0'",
+                "'\\n'",
+                "'.'",
+                "'$'"
+              ],
+              "answer": 0,
+              "explanation": "El carácter nulo \\0 marca el final de una cadena."
+            },
+            {
+              "type": "output",
+              "code": "char s[] = \"codigo\";\nprintf(\"%c\", s[0]);",
+              "options": [
+                "c",
+                "o",
+                "codigo",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "s[0] es el primer carácter."
+            }
+          ]
+        },
+        {
+          "id": "c-4-2",
+          "title": "Punteros",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "int x = 5;\nint *p = &x;\n*p = 9;\nprintf(\"%d\", x);",
+              "options": [
+                "9",
+                "5",
+                "La dirección de x",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "p apunta a x; *p = 9 cambia el valor de x."
+            },
+            {
+              "type": "fill",
+              "prompt": "Guarda la dirección de x",
+              "code": "int x = 10;\nint *p = ___x;",
+              "options": [
+                "&",
+                "*",
+                "%",
+                "@"
+              ],
+              "answer": [
+                "&"
+              ],
+              "explanation": "& obtiene la dirección de memoria de una variable."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué guarda un puntero?",
+              "options": [
+                "Una dirección de memoria",
+                "Un número decimal",
+                "Una copia de la variable",
+                "Un texto"
+              ],
+              "answer": 0,
+              "explanation": "Un puntero guarda dónde está un dato en memoria."
+            },
+            {
+              "type": "output",
+              "code": "void cambiar(int *x) {\n  *x = 100;\n}\n/* en main: */\nint n = 5;\ncambiar(&n);\nprintf(\"%d\", n);",
+              "options": [
+                "100",
+                "5",
+                "0",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Al pasar la dirección, la función modifica la variable original."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para que imprima 4",
+              "lines": [
+                "int a = 3;",
+                "int *p = &a;",
+                "*p = *p + 1;",
+                "printf(\"%d\", a);"
+              ],
+              "explanation": "Se modifica a a través del puntero."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "title": "Memoria y estructuras",
+      "description": "Structs y memoria dinámica.",
+      "lessons": [
+        {
+          "id": "c-5-1",
+          "title": "Structs",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Define la estructura",
+              "code": "___ Punto {\n  int x;\n  int y;\n};",
+              "options": [
+                "struct",
+                "class",
+                "record",
+                "type"
+              ],
+              "answer": [
+                "struct"
+              ],
+              "explanation": "struct agrupa varios campos en un tipo nuevo."
+            },
+            {
+              "type": "output",
+              "code": "struct Punto { int x; int y; };\nstruct Punto p = {3, 4};\nprintf(\"%d\", p.x + p.y);",
+              "options": [
+                "7",
+                "34",
+                "3",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "x vale 3 e y vale 4."
+            },
+            {
+              "type": "output",
+              "code": "struct Punto { int x; };\nstruct Punto p = {2};\nstruct Punto *ptr = &p;\nptr->x = 8;\nprintf(\"%d\", p.x);",
+              "options": [
+                "8",
+                "2",
+                "Error",
+                "0"
+              ],
+              "answer": 0,
+              "explanation": "-> accede al campo a través del puntero y modifica p."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué operador accede a un campo mediante un puntero a struct?",
+              "options": [
+                "->",
+                ".",
+                "::",
+                "=>"
+              ],
+              "answer": 0,
+              "explanation": "ptr->x equivale a (*ptr).x."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué hace typedef?",
+              "options": [
+                "Crea un alias para un tipo",
+                "Define una función",
+                "Reserva memoria",
+                "Declara una constante"
+              ],
+              "answer": 0,
+              "explanation": "typedef struct Punto Punto; permite escribir solo Punto."
+            }
+          ]
+        },
+        {
+          "id": "c-5-2",
+          "title": "Memoria dinámica",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Reserva memoria para 3 enteros",
+              "code": "int *v = ___(3 * sizeof(int));",
+              "options": [
+                "malloc",
+                "new",
+                "alloc",
+                "create"
+              ],
+              "answer": [
+                "malloc"
+              ],
+              "explanation": "malloc reserva bytes en el heap; está en stdlib.h."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué función libera la memoria reservada con malloc?",
+              "options": [
+                "free()",
+                "delete",
+                "release()",
+                "clear()"
+              ],
+              "answer": 0,
+              "explanation": "Cada malloc debe tener su free para evitar fugas de memoria."
+            },
+            {
+              "type": "output",
+              "code": "int *v = malloc(2 * sizeof(int));\nv[0] = 4;\nv[1] = 6;\nprintf(\"%d\", v[0] * v[1]);\nfree(v);",
+              "options": [
+                "24",
+                "10",
+                "46",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "4 × 6 = 24."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué devuelve malloc si no hay memoria suficiente?",
+              "options": [
+                "NULL",
+                "0 bytes",
+                "-1",
+                "Un error de compilación"
+              ],
+              "answer": 0,
+              "explanation": "Siempre conviene comprobar si malloc devolvió NULL."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena el uso correcto de la memoria",
+              "lines": [
+                "int *p = malloc(sizeof(int));",
+                "*p = 42;",
+                "printf(\"%d\", *p);",
+                "free(p);"
+              ],
+              "explanation": "Reservar, usar y al final liberar."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,728 @@
+{
+  "id": "javascript",
+  "units": [
+    {
+      "level": "regular",
+      "title": "Primeros pasos",
+      "description": "Muestra mensajes y guarda datos en variables.",
+      "lessons": [
+        {
+          "id": "js-1-1",
+          "title": "Hola, mundo",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿Qué instrucción muestra un mensaje en la consola?",
+              "options": [
+                "console.log()",
+                "print()",
+                "echo",
+                "System.out.println()"
+              ],
+              "answer": 0,
+              "explanation": "console.log() escribe en la consola del navegador o de Node.js."
+            },
+            {
+              "type": "fill",
+              "prompt": "Completa para mostrar Hola",
+              "code": "console.___(\"Hola\");",
+              "options": [
+                "log",
+                "print",
+                "write",
+                "show"
+              ],
+              "answer": [
+                "log"
+              ],
+              "explanation": "El método es console.log()."
+            },
+            {
+              "type": "output",
+              "code": "console.log(\"3\" + 4);",
+              "options": [
+                "34",
+                "7",
+                "Error",
+                "\"3\"4"
+              ],
+              "answer": 0,
+              "explanation": "Si uno de los dos es texto, + concatena en vez de sumar."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Cómo se escribe un comentario de una línea?",
+              "options": [
+                "// comentario",
+                "# comentario",
+                "<!-- comentario -->",
+                "-- comentario"
+              ],
+              "answer": 0,
+              "explanation": "En JavaScript, // inicia un comentario de una línea."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para mostrar A, B y C",
+              "lines": [
+                "console.log(\"A\");",
+                "console.log(\"B\");",
+                "console.log(\"C\");"
+              ],
+              "explanation": "Las instrucciones se ejecutan de arriba hacia abajo."
+            }
+          ]
+        },
+        {
+          "id": "js-1-2",
+          "title": "Variables",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿Qué palabra declara una variable que NO se puede reasignar?",
+              "options": [
+                "const",
+                "let",
+                "var",
+                "static"
+              ],
+              "answer": 0,
+              "explanation": "const crea una referencia que no se puede volver a asignar."
+            },
+            {
+              "type": "output",
+              "code": "let x = 5;\nx = x * 2;\nconsole.log(x);",
+              "options": [
+                "10",
+                "5",
+                "25",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "x vale 5 y luego se multiplica por 2."
+            },
+            {
+              "type": "fill",
+              "prompt": "Declara una variable que luego cambia",
+              "code": "___ nombre = \"Ana\";\nnombre = \"Luis\";",
+              "options": [
+                "let",
+                "const",
+                "def",
+                "int"
+              ],
+              "answer": [
+                "let"
+              ],
+              "explanation": "let permite reasignar. Con const, la segunda línea daría error."
+            },
+            {
+              "type": "output",
+              "code": "const a = 7;\nconst b = 2;\nconsole.log(a % b);",
+              "options": [
+                "1",
+                "3.5",
+                "3",
+                "2"
+              ],
+              "answer": 0,
+              "explanation": "% devuelve el resto de la división: 7 entre 2 da resto 1."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para que imprima 35",
+              "lines": [
+                "let precio = 10;",
+                "let total = precio * 3;",
+                "total = total + 5;",
+                "console.log(total);"
+              ],
+              "explanation": "10 × 3 = 30, más 5 = 35."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "medio",
+      "title": "Tipos y decisiones",
+      "description": "Tipos de datos, comparaciones y condicionales.",
+      "lessons": [
+        {
+          "id": "js-2-1",
+          "title": "Tipos",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "console.log(typeof 42);",
+              "options": [
+                "number",
+                "int",
+                "integer",
+                "Number"
+              ],
+              "answer": 0,
+              "explanation": "En JavaScript todos los números son del tipo number."
+            },
+            {
+              "type": "output",
+              "code": "console.log(5 == \"5\", 5 === \"5\");",
+              "options": [
+                "true false",
+                "false true",
+                "true true",
+                "false false"
+              ],
+              "answer": 0,
+              "explanation": "== convierte los tipos antes de comparar; === no."
+            },
+            {
+              "type": "fill",
+              "prompt": "Convierte el texto en número para que imprima 43",
+              "code": "const n = ___(\"42\");\nconsole.log(n + 1);",
+              "options": [
+                "Number",
+                "String",
+                "parse",
+                "int"
+              ],
+              "answer": [
+                "Number"
+              ],
+              "explanation": "Number(\"42\") devuelve el número 42."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué valor tiene una variable declarada sin asignar?",
+              "options": [
+                "undefined",
+                "null",
+                "0",
+                "\"\""
+              ],
+              "answer": 0,
+              "explanation": "let x; deja x con el valor undefined."
+            },
+            {
+              "type": "output",
+              "code": "console.log(Math.max(3, 9, 4));",
+              "options": [
+                "9",
+                "3",
+                "16",
+                "[3, 9, 4]"
+              ],
+              "answer": 0,
+              "explanation": "Math.max devuelve el mayor de los valores."
+            }
+          ]
+        },
+        {
+          "id": "js-2-2",
+          "title": "Condicionales",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "const edad = 15;\nif (edad >= 18) {\n  console.log(\"Adulto\");\n} else {\n  console.log(\"Menor\");\n}",
+              "options": [
+                "Menor",
+                "Adulto",
+                "Error",
+                "Nada"
+              ],
+              "answer": 0,
+              "explanation": "15 no es mayor o igual que 18, así que se ejecuta el else."
+            },
+            {
+              "type": "fill",
+              "prompt": "Completa la condición",
+              "code": "const x = 10;\n___ (x > 5) {\n  console.log(\"Grande\");\n}",
+              "options": [
+                "if",
+                "when",
+                "for",
+                "case"
+              ],
+              "answer": [
+                "if"
+              ],
+              "explanation": "if (condición) { ... } ejecuta el bloque si la condición es verdadera."
+            },
+            {
+              "type": "output",
+              "code": "const n = 4;\nconsole.log(n % 2 === 0 ? \"par\" : \"impar\");",
+              "options": [
+                "par",
+                "impar",
+                "true",
+                "0"
+              ],
+              "answer": 0,
+              "explanation": "El operador ternario elige \"par\" porque 4 % 2 es 0."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué operador significa \"y\" lógico?",
+              "options": [
+                "&&",
+                "||",
+                "!",
+                "??"
+              ],
+              "answer": 0,
+              "explanation": "&& es \"y\"; || es \"o\"; ! es \"no\"."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena el programa",
+              "lines": [
+                "const nota = 8;",
+                "if (nota >= 6) {",
+                "  console.log(\"Aprobado\");",
+                "} else {",
+                "  console.log(\"Reprobado\");",
+                "}"
+              ],
+              "explanation": "Las llaves abren y cierran cada bloque."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "intermedio",
+      "title": "Bucles y funciones",
+      "description": "Repite tareas y crea funciones.",
+      "lessons": [
+        {
+          "id": "js-3-1",
+          "title": "Bucles",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "for (let i = 0; i < 3; i++) {\n  console.log(i);\n}",
+              "options": [
+                "0\n1\n2",
+                "1\n2\n3",
+                "0\n1\n2\n3",
+                "3"
+              ],
+              "answer": 0,
+              "explanation": "i empieza en 0 y el bucle se detiene cuando i llega a 3."
+            },
+            {
+              "type": "fill",
+              "prompt": "Recorre los valores del arreglo",
+              "code": "const frutas = [\"pera\", \"uva\"];\nfor (const f ___ frutas) {\n  console.log(f);\n}",
+              "options": [
+                "of",
+                "in",
+                "on",
+                "from"
+              ],
+              "answer": [
+                "of"
+              ],
+              "explanation": "for...of recorre valores; for...in recorre índices o claves."
+            },
+            {
+              "type": "output",
+              "code": "let total = 0;\nfor (const n of [1, 2, 3]) {\n  total += n;\n}\nconsole.log(total);",
+              "options": [
+                "6",
+                "123",
+                "3",
+                "0"
+              ],
+              "answer": 0,
+              "explanation": "Se suman 1 + 2 + 3 = 6."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué hace continue en un bucle?",
+              "options": [
+                "Salta a la siguiente vuelta",
+                "Sale del bucle",
+                "Detiene el programa",
+                "Repite la vuelta actual"
+              ],
+              "answer": 0,
+              "explanation": "continue omite el resto de la vuelta actual y pasa a la siguiente."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para imprimir 3, 2 y 1",
+              "lines": [
+                "let n = 3;",
+                "while (n > 0) {",
+                "  console.log(n);",
+                "  n--;",
+                "}"
+              ],
+              "explanation": "Primero se imprime y luego se resta 1."
+            }
+          ]
+        },
+        {
+          "id": "js-3-2",
+          "title": "Funciones",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Declara la función",
+              "code": "___ doble(x) {\n  return x * 2;\n}",
+              "options": [
+                "function",
+                "def",
+                "func",
+                "fn"
+              ],
+              "answer": [
+                "function"
+              ],
+              "explanation": "Las funciones se declaran con la palabra function."
+            },
+            {
+              "type": "output",
+              "code": "const suma = (a, b) => a + b;\nconsole.log(suma(2, 3));",
+              "options": [
+                "5",
+                "23",
+                "a + b",
+                "undefined"
+              ],
+              "answer": 0,
+              "explanation": "Una función flecha con una sola expresión devuelve su resultado."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué devuelve una función sin return?",
+              "options": [
+                "undefined",
+                "null",
+                "0",
+                "false"
+              ],
+              "answer": 0,
+              "explanation": "Si no hay return, la función devuelve undefined."
+            },
+            {
+              "type": "output",
+              "code": "function saludo(nombre = \"amigo\") {\n  return \"Hola \" + nombre;\n}\nconsole.log(saludo());",
+              "options": [
+                "Hola amigo",
+                "Hola undefined",
+                "Hola ",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Si no se pasa el argumento, se usa el valor por defecto."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena la función y su uso",
+              "lines": [
+                "function area(base, altura) {",
+                "  const r = base * altura;",
+                "  return r;",
+                "}",
+                "console.log(area(3, 4));"
+              ],
+              "explanation": "Imprime 12."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "avanzado",
+      "title": "Arreglos y objetos",
+      "description": "Arreglos, objetos y métodos útiles.",
+      "lessons": [
+        {
+          "id": "js-4-1",
+          "title": "Arreglos y objetos",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "const nums = [10, 20, 30];\nconsole.log(nums.length);",
+              "options": [
+                "3",
+                "2",
+                "30",
+                "[10, 20, 30]"
+              ],
+              "answer": 0,
+              "explanation": "length es la cantidad de elementos."
+            },
+            {
+              "type": "fill",
+              "prompt": "Agrega el 3 al final",
+              "code": "const lista = [1, 2];\nlista.___(3);\nconsole.log(lista);",
+              "options": [
+                "push",
+                "append",
+                "add",
+                "insert"
+              ],
+              "answer": [
+                "push"
+              ],
+              "explanation": "push() agrega elementos al final de un arreglo."
+            },
+            {
+              "type": "output",
+              "code": "const p = { nombre: \"Ana\", edad: 25 };\nconsole.log(p.edad);",
+              "options": [
+                "25",
+                "Ana",
+                "edad",
+                "undefined"
+              ],
+              "answer": 0,
+              "explanation": "Con objeto.propiedad lees el valor de esa propiedad."
+            },
+            {
+              "type": "output",
+              "code": "console.log([1, 2, 3].map(n => n * 2).join(\",\"));",
+              "options": [
+                "2,4,6",
+                "1,2,3",
+                "2,3,4",
+                "12"
+              ],
+              "answer": 0,
+              "explanation": "map transforma cada elemento y join los une con comas."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué método devuelve solo los elementos que cumplen una condición?",
+              "options": [
+                "filter()",
+                "map()",
+                "forEach()",
+                "reduce()"
+              ],
+              "answer": 0,
+              "explanation": "filter() crea un arreglo nuevo con los elementos que pasan la prueba."
+            }
+          ]
+        },
+        {
+          "id": "js-4-2",
+          "title": "Texto y desestructuración",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "console.log(\"javascript\".toUpperCase());",
+              "options": [
+                "JAVASCRIPT",
+                "Javascript",
+                "javascript",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "toUpperCase() convierte a mayúsculas."
+            },
+            {
+              "type": "output",
+              "code": "const nombre = \"Luis\";\nconsole.log(`Hola ${nombre}!`);",
+              "options": [
+                "Hola Luis!",
+                "Hola ${nombre}!",
+                "Hola nombre!",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Las plantillas con comillas invertidas reemplazan ${...} por su valor."
+            },
+            {
+              "type": "fill",
+              "prompt": "Divide el texto por guiones",
+              "code": "const partes = \"a-b-c\".___(\"-\");\nconsole.log(partes.length);",
+              "options": [
+                "split",
+                "join",
+                "slice",
+                "trim"
+              ],
+              "answer": [
+                "split"
+              ],
+              "explanation": "split(\"-\") devuelve [\"a\", \"b\", \"c\"], que tiene 3 elementos."
+            },
+            {
+              "type": "output",
+              "code": "const [a, b] = [5, 8];\nconsole.log(b);",
+              "options": [
+                "8",
+                "5",
+                "[5, 8]",
+                "undefined"
+              ],
+              "answer": 0,
+              "explanation": "La desestructuración asigna cada posición a una variable."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para que imprima 2,4",
+              "lines": [
+                "const nums = [1, 2, 3, 4];",
+                "const pares = nums.filter(n => n % 2 === 0);",
+                "console.log(pares.join(\",\"));"
+              ],
+              "explanation": "Primero el arreglo, luego el filtro y al final la salida."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "title": "Clases y asincronía",
+      "description": "Clases, promesas y manejo de errores.",
+      "lessons": [
+        {
+          "id": "js-5-1",
+          "title": "Clases",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Completa el constructor",
+              "code": "class Perro {\n  ___(nombre) {\n    this.nombre = nombre;\n  }\n}",
+              "options": [
+                "constructor",
+                "init",
+                "__init__",
+                "new"
+              ],
+              "answer": [
+                "constructor"
+              ],
+              "explanation": "En JavaScript el método constructor se llama constructor."
+            },
+            {
+              "type": "output",
+              "code": "class Contador {\n  constructor() { this.valor = 0; }\n  sumar() { this.valor++; }\n}\nconst c = new Contador();\nc.sumar();\nc.sumar();\nconsole.log(c.valor);",
+              "options": [
+                "2",
+                "0",
+                "1",
+                "undefined"
+              ],
+              "answer": 0,
+              "explanation": "Cada llamada a sumar() incrementa valor."
+            },
+            {
+              "type": "output",
+              "code": "class Animal {\n  sonido() { return \"...\"; }\n}\nclass Gato extends Animal {\n  sonido() { return \"Miau\"; }\n}\nconsole.log(new Gato().sonido());",
+              "options": [
+                "Miau",
+                "...",
+                "undefined",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Gato sobrescribe el método sonido() de Animal."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué palabra crea un objeto a partir de una clase?",
+              "options": [
+                "new",
+                "create",
+                "make",
+                "this"
+              ],
+              "answer": 0,
+              "explanation": "new Clase() crea una instancia."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para crear el punto e imprimir 5",
+              "lines": [
+                "class Punto {",
+                "  constructor(x) {",
+                "    this.x = x;",
+                "  }",
+                "}",
+                "const p = new Punto(5);",
+                "console.log(p.x);"
+              ],
+              "explanation": "La clase se define antes de crear objetos con ella."
+            }
+          ]
+        },
+        {
+          "id": "js-5-2",
+          "title": "Asincronía y errores",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "console.log(\"A\");\nsetTimeout(() => console.log(\"B\"), 0);\nconsole.log(\"C\");",
+              "options": [
+                "A\nC\nB",
+                "A\nB\nC",
+                "B\nA\nC",
+                "C\nA\nB"
+              ],
+              "answer": 0,
+              "explanation": "setTimeout espera a que termine el código actual, aunque el tiempo sea 0."
+            },
+            {
+              "type": "fill",
+              "prompt": "Completa la función asíncrona",
+              "code": "___ function cargar() {\n  const datos = await obtener();\n  return datos;\n}",
+              "options": [
+                "async",
+                "await",
+                "sync",
+                "defer"
+              ],
+              "answer": [
+                "async"
+              ],
+              "explanation": "Solo se puede usar await dentro de una función async."
+            },
+            {
+              "type": "output",
+              "code": "try {\n  throw new Error(\"fallo\");\n} catch (e) {\n  console.log(e.message);\n}",
+              "options": [
+                "fallo",
+                "Error",
+                "e.message",
+                "undefined"
+              ],
+              "answer": 0,
+              "explanation": "catch recibe el error; message contiene su texto."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué representa una Promise?",
+              "options": [
+                "Un valor que estará disponible en el futuro",
+                "Un tipo de bucle",
+                "Una variable constante",
+                "Un error de sintaxis"
+              ],
+              "answer": 0,
+              "explanation": "Una promesa representa el resultado de una operación asíncrona."
+            },
+            {
+              "type": "output",
+              "code": "Promise.resolve(5).then(n => console.log(n * 2));",
+              "options": [
+                "10",
+                "5",
+                "Promise",
+                "undefined"
+              ],
+              "answer": 0,
+              "explanation": "then recibe el valor resuelto (5) y lo multiplica por 2."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

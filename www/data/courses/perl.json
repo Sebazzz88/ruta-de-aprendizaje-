@@ -1,0 +1,727 @@
+{
+  "id": "perl",
+  "units": [
+    {
+      "level": "regular",
+      "title": "Primeros pasos",
+      "description": "Imprime texto y usa escalares.",
+      "lessons": [
+        {
+          "id": "pl-1-1",
+          "title": "Hola, mundo",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿Qué función imprime texto en Perl?",
+              "options": [
+                "print",
+                "echo",
+                "console.log",
+                "puts"
+              ],
+              "answer": 0,
+              "explanation": "print escribe en la salida estándar."
+            },
+            {
+              "type": "fill",
+              "prompt": "Completa para imprimir Hola",
+              "code": "___ \"Hola\\n\";",
+              "options": [
+                "print",
+                "echo",
+                "write",
+                "out"
+              ],
+              "answer": [
+                "print"
+              ],
+              "explanation": "\\n agrega un salto de línea."
+            },
+            {
+              "type": "output",
+              "code": "print \"Hola, \" . \"Perl\";",
+              "options": [
+                "Hola, Perl",
+                "Hola, + Perl",
+                "Error",
+                "Hola,Perl"
+              ],
+              "answer": 0,
+              "explanation": "En Perl el punto (.) concatena textos."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Con qué termina cada instrucción en Perl?",
+              "options": [
+                ";",
+                ".",
+                ":",
+                "Con nada"
+              ],
+              "answer": 0,
+              "explanation": "Cada instrucción termina en punto y coma."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para imprimir Uno, Dos y Tres",
+              "lines": [
+                "print \"Uno\\n\";",
+                "print \"Dos\\n\";",
+                "print \"Tres\\n\";"
+              ],
+              "explanation": "Se ejecutan de arriba hacia abajo."
+            }
+          ]
+        },
+        {
+          "id": "pl-1-2",
+          "title": "Escalares",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿Qué símbolo usan las variables escalares (un solo valor)?",
+              "options": [
+                "$",
+                "@",
+                "%",
+                "&"
+              ],
+              "answer": 0,
+              "explanation": "$ escalar, @ arreglo, % hash."
+            },
+            {
+              "type": "output",
+              "code": "my $edad = 20;\n$edad++;\nprint $edad;",
+              "options": [
+                "21",
+                "20",
+                "Error",
+                "$edad"
+              ],
+              "answer": 0,
+              "explanation": "++ suma 1."
+            },
+            {
+              "type": "fill",
+              "prompt": "Inserta la variable en el texto",
+              "code": "my $nombre = \"Ana\";\nprint \"Hola ___\";",
+              "options": [
+                "$nombre",
+                "nombre",
+                "@nombre",
+                "%nombre"
+              ],
+              "answer": [
+                "$nombre"
+              ],
+              "explanation": "Con comillas dobles, las variables se reemplazan por su valor."
+            },
+            {
+              "type": "output",
+              "code": "my $a = 7;\nmy $b = 2;\nprint $a / $b;",
+              "options": [
+                "3.5",
+                "3",
+                "4",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "En Perl, / devuelve decimales."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para que imprima 35",
+              "lines": [
+                "my $precio = 10;",
+                "my $total = $precio * 3;",
+                "$total += 5;",
+                "print $total;"
+              ],
+              "explanation": "10 × 3 = 30, más 5 = 35."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "medio",
+      "title": "Texto y decisiones",
+      "description": "Operadores de texto y condicionales.",
+      "lessons": [
+        {
+          "id": "pl-2-1",
+          "title": "Números y texto",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "print \"5\" + 3;",
+              "options": [
+                "8",
+                "53",
+                "Error",
+                "5 + 3"
+              ],
+              "answer": 0,
+              "explanation": "+ siempre suma: Perl convierte \"5\" en número."
+            },
+            {
+              "type": "output",
+              "code": "print \"ab\" x 3;",
+              "options": [
+                "ababab",
+                "ab3",
+                "ab ab ab",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "x repite el texto."
+            },
+            {
+              "type": "fill",
+              "prompt": "Convierte a mayúsculas",
+              "code": "my $s = \"perl\";\nprint ___($s);",
+              "options": [
+                "uc",
+                "upper",
+                "toUpper",
+                "caps"
+              ],
+              "answer": [
+                "uc"
+              ],
+              "explanation": "uc = upper case; lc = lower case."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué operador compara si dos cadenas son iguales?",
+              "options": [
+                "eq",
+                "==",
+                "===",
+                "equals"
+              ],
+              "answer": 0,
+              "explanation": "== compara números; eq compara cadenas."
+            },
+            {
+              "type": "output",
+              "code": "print length(\"hola\");",
+              "options": [
+                "4",
+                "5",
+                "3",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "length cuenta los caracteres."
+            }
+          ]
+        },
+        {
+          "id": "pl-2-2",
+          "title": "Condicionales",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "my $x = 7;\nif ($x > 5) {\n  print \"grande\";\n} else {\n  print \"pequeño\";\n}",
+              "options": [
+                "grande",
+                "pequeño",
+                "Error",
+                "Nada"
+              ],
+              "answer": 0,
+              "explanation": "7 es mayor que 5."
+            },
+            {
+              "type": "fill",
+              "prompt": "Ejecuta el bloque si la condición es falsa",
+              "code": "my $n = 3;\n___ ($n == 0) {\n  print \"no es cero\";\n}",
+              "options": [
+                "unless",
+                "if",
+                "when",
+                "else"
+              ],
+              "answer": [
+                "unless"
+              ],
+              "explanation": "unless es lo contrario de if."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Cómo se escribe \"si no, si\" en Perl?",
+              "options": [
+                "elsif",
+                "elseif",
+                "else if",
+                "elif"
+              ],
+              "answer": 0,
+              "explanation": "En Perl es elsif, sin la segunda \"e\"."
+            },
+            {
+              "type": "output",
+              "code": "my $edad = 20;\nprint \"Adulto\" if $edad >= 18;",
+              "options": [
+                "Adulto",
+                "Nada",
+                "Error",
+                "20"
+              ],
+              "answer": 0,
+              "explanation": "El if puede ir al final de la instrucción."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena el programa",
+              "lines": [
+                "my $nota = 8;",
+                "if ($nota >= 6) {",
+                "  print \"Aprobado\";",
+                "} else {",
+                "  print \"Reprobado\";",
+                "}"
+              ],
+              "explanation": "else va justo después de cerrar el bloque del if."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "intermedio",
+      "title": "Arreglos y subrutinas",
+      "description": "Arreglos, bucles y subrutinas.",
+      "lessons": [
+        {
+          "id": "pl-3-1",
+          "title": "Arreglos y bucles",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Declara un arreglo",
+              "code": "my ___nums = (1, 2, 3);",
+              "options": [
+                "@",
+                "$",
+                "%",
+                "&"
+              ],
+              "answer": [
+                "@"
+              ],
+              "explanation": "Los arreglos completos usan @."
+            },
+            {
+              "type": "output",
+              "code": "my @nums = (10, 20, 30);\nprint $nums[1];",
+              "options": [
+                "20",
+                "10",
+                "30",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Un elemento suelto es escalar, por eso se escribe $nums[1]."
+            },
+            {
+              "type": "output",
+              "code": "my $total = 0;\nforeach my $n (1..4) {\n  $total += $n;\n}\nprint $total;",
+              "options": [
+                "10",
+                "4",
+                "1234",
+                "9"
+              ],
+              "answer": 0,
+              "explanation": "1 + 2 + 3 + 4 = 10."
+            },
+            {
+              "type": "output",
+              "code": "my @nums = (1, 2, 3);\nprint scalar(@nums);",
+              "options": [
+                "3",
+                "1 2 3",
+                "2",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "scalar(@arreglo) da la cantidad de elementos."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para imprimir 321",
+              "lines": [
+                "my $n = 3;",
+                "while ($n > 0) {",
+                "  print $n;",
+                "  $n--;",
+                "}"
+              ],
+              "explanation": "Se imprime y luego se resta 1."
+            }
+          ]
+        },
+        {
+          "id": "pl-3-2",
+          "title": "Subrutinas",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Define la subrutina",
+              "code": "___ doble {\n  my ($x) = @_;\n  return $x * 2;\n}",
+              "options": [
+                "sub",
+                "def",
+                "function",
+                "fn"
+              ],
+              "answer": [
+                "sub"
+              ],
+              "explanation": "Las subrutinas se definen con sub."
+            },
+            {
+              "type": "output",
+              "code": "sub doble {\n  my ($x) = @_;\n  return $x * 2;\n}\nprint doble(4);",
+              "options": [
+                "8",
+                "4",
+                "Error",
+                "$x * 2"
+              ],
+              "answer": 0,
+              "explanation": "La subrutina devuelve 4 × 2."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Dónde recibe una subrutina sus argumentos?",
+              "options": [
+                "En el arreglo @_",
+                "En $args",
+                "En %params",
+                "En $0"
+              ],
+              "answer": 0,
+              "explanation": "my ($x, $y) = @_; los copia en variables."
+            },
+            {
+              "type": "output",
+              "code": "sub suma {\n  my ($x, $y) = @_;\n  $x + $y;\n}\nprint suma(2, 3);",
+              "options": [
+                "5",
+                "23",
+                "Error",
+                "Nada"
+              ],
+              "answer": 0,
+              "explanation": "Sin return, se devuelve la última expresión."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena la subrutina y su uso",
+              "lines": [
+                "sub area {",
+                "  my ($base, $alto) = @_;",
+                "  return $base * $alto;",
+                "}",
+                "print area(3, 4);"
+              ],
+              "explanation": "Imprime 12."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "avanzado",
+      "title": "Hashes y expresiones regulares",
+      "description": "Hashes, map y expresiones regulares.",
+      "lessons": [
+        {
+          "id": "pl-4-1",
+          "title": "Hashes",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Declara un hash",
+              "code": "my ___edades = (ana => 25, luis => 30);",
+              "options": [
+                "%",
+                "@",
+                "$",
+                "&"
+              ],
+              "answer": [
+                "%"
+              ],
+              "explanation": "Los hashes completos usan %."
+            },
+            {
+              "type": "output",
+              "code": "my %edades = (ana => 25, luis => 30);\nprint $edades{luis};",
+              "options": [
+                "30",
+                "25",
+                "luis",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Un valor suelto es escalar: $hash{clave}."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué devuelve keys %hash?",
+              "options": [
+                "La lista de claves",
+                "La lista de valores",
+                "El número de pares",
+                "El primer valor"
+              ],
+              "answer": 0,
+              "explanation": "values %hash devuelve los valores."
+            },
+            {
+              "type": "output",
+              "code": "my %h = (a => 1);\nprint exists $h{b} ? \"si\" : \"no\";",
+              "options": [
+                "no",
+                "si",
+                "1",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "La clave b no existe en el hash."
+            },
+            {
+              "type": "output",
+              "code": "my @nums = (1, 2, 3);\nmy @dobles = map { $_ * 2 } @nums;\nprint \"@dobles\";",
+              "options": [
+                "2 4 6",
+                "246",
+                "1 2 3",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Un arreglo dentro de comillas dobles se une con espacios."
+            }
+          ]
+        },
+        {
+          "id": "pl-4-2",
+          "title": "Expresiones regulares",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "my $s = \"hola mundo\";\nprint \"encontrado\" if $s =~ /mundo/;",
+              "options": [
+                "encontrado",
+                "Nada",
+                "mundo",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "=~ aplica la expresión regular al texto."
+            },
+            {
+              "type": "fill",
+              "prompt": "Reemplaza la g por p",
+              "code": "my $s = \"gato\";\n$s =~ ___/g/p/;\nprint $s;",
+              "options": [
+                "s",
+                "m",
+                "q",
+                "x"
+              ],
+              "answer": [
+                "s"
+              ],
+              "explanation": "s/patrón/reemplazo/ sustituye. Imprime pato."
+            },
+            {
+              "type": "output",
+              "code": "my $t = \"a1b2c3\";\nmy @d = $t =~ /(\\d)/g;\nprint scalar(@d);",
+              "options": [
+                "3",
+                "6",
+                "1",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Con /g se capturan todos los dígitos: 1, 2 y 3."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué significa \\d en una expresión regular?",
+              "options": [
+                "Un dígito",
+                "Una letra",
+                "Un espacio",
+                "Cualquier carácter"
+              ],
+              "answer": 0,
+              "explanation": "\\w es letra o número y \\s es espacio."
+            },
+            {
+              "type": "output",
+              "code": "my $s = \"Perl\";\n$s =~ tr/a-z/A-Z/;\nprint $s;",
+              "options": [
+                "PERL",
+                "Perl",
+                "perl",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "tr traduce cada letra minúscula a mayúscula."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "title": "Referencias y módulos",
+      "description": "Referencias, estructuras anidadas y buenas prácticas.",
+      "lessons": [
+        {
+          "id": "pl-5-1",
+          "title": "Referencias",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Crea una referencia al arreglo",
+              "code": "my @nums = (1, 2, 3);\nmy $ref = ___@nums;",
+              "options": [
+                "\\",
+                "&",
+                "*",
+                "@"
+              ],
+              "answer": [
+                "\\"
+              ],
+              "explanation": "La barra invertida crea una referencia."
+            },
+            {
+              "type": "output",
+              "code": "my $ref = [10, 20, 30];\nprint $ref->[2];",
+              "options": [
+                "30",
+                "20",
+                "10",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "-> accede a un elemento a través de la referencia."
+            },
+            {
+              "type": "output",
+              "code": "my $p = { nombre => \"Ana\" };\nprint $p->{nombre};",
+              "options": [
+                "Ana",
+                "nombre",
+                "HASH(0x...)",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Las llaves crean una referencia a un hash anónimo."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué crean los corchetes en my $r = [1, 2];?",
+              "options": [
+                "Una referencia a un arreglo anónimo",
+                "Un hash",
+                "Un escalar con el valor 2",
+                "Una subrutina"
+              ],
+              "answer": 0,
+              "explanation": "[ ] crea un arreglo anónimo y devuelve su referencia."
+            },
+            {
+              "type": "output",
+              "code": "my @a = (1, 2, 3);\nmy $r = \\@a;\nprint scalar(@$r);",
+              "options": [
+                "3",
+                "1",
+                "ARRAY",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "@$r desreferencia el arreglo."
+            }
+          ]
+        },
+        {
+          "id": "pl-5-2",
+          "title": "Buenas prácticas",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿Qué hace use strict;?",
+              "options": [
+                "Obliga a declarar variables y evita errores comunes",
+                "Hace el programa más rápido",
+                "Activa colores",
+                "Desactiva las advertencias"
+              ],
+              "answer": 0,
+              "explanation": "Siempre conviene empezar con use strict; y use warnings;."
+            },
+            {
+              "type": "fill",
+              "prompt": "Activa las advertencias",
+              "code": "use strict;\nuse ___;",
+              "options": [
+                "warnings",
+                "errors",
+                "debug",
+                "safe"
+              ],
+              "answer": [
+                "warnings"
+              ],
+              "explanation": "use warnings avisa de posibles errores."
+            },
+            {
+              "type": "output",
+              "code": "my $r = eval { die \"fallo\\n\"; 1 };\nprint $@;",
+              "options": [
+                "fallo",
+                "1",
+                "Error",
+                "Nada"
+              ],
+              "answer": 0,
+              "explanation": "eval captura el die y guarda el mensaje en $@."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué palabra carga un módulo?",
+              "options": [
+                "use",
+                "import",
+                "include",
+                "require_once"
+              ],
+              "answer": 0,
+              "explanation": "Por ejemplo: use List::Util qw(sum);"
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para imprimir a=1 b=2",
+              "lines": [
+                "my %h = (a => 1, b => 2);",
+                "for my $k (sort keys %h) {",
+                "  print \"$k=$h{$k} \";",
+                "}"
+              ],
+              "explanation": "sort keys recorre las claves en orden alfabético."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

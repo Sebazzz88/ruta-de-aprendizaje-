@@ -1,0 +1,725 @@
+{
+  "id": "python",
+  "units": [
+    {
+      "level": "regular",
+      "title": "Primeros pasos",
+      "description": "Muestra mensajes y guarda datos en variables.",
+      "lessons": [
+        {
+          "id": "py-1-1",
+          "title": "Hola, mundo",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿Qué función muestra texto en pantalla en Python?",
+              "options": [
+                "print()",
+                "echo()",
+                "console.log()",
+                "write()"
+              ],
+              "answer": 0,
+              "explanation": "print() muestra en la consola lo que pongas entre paréntesis."
+            },
+            {
+              "type": "fill",
+              "prompt": "Completa para mostrar Hola",
+              "code": "___(\"Hola\")",
+              "options": [
+                "print",
+                "say",
+                "show",
+                "printf"
+              ],
+              "answer": [
+                "print"
+              ],
+              "explanation": "En Python se usa print(\"texto\") para mostrar mensajes."
+            },
+            {
+              "type": "output",
+              "code": "print(\"Hola, \" + \"mundo\")",
+              "options": [
+                "Hola, mundo",
+                "Hola,mundo",
+                "\"Hola, \" + \"mundo\"",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "El operador + une (concatena) dos textos."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué símbolo inicia un comentario en Python?",
+              "options": [
+                "#",
+                "//",
+                "/*",
+                "--"
+              ],
+              "answer": 0,
+              "explanation": "Todo lo que va después de # en una línea es un comentario y Python lo ignora."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para imprimir Uno, Dos y Tres",
+              "lines": [
+                "print(\"Uno\")",
+                "print(\"Dos\")",
+                "print(\"Tres\")"
+              ],
+              "explanation": "Python ejecuta las líneas de arriba hacia abajo."
+            }
+          ]
+        },
+        {
+          "id": "py-1-2",
+          "title": "Variables",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿Cómo guardas el número 5 en una variable llamada x?",
+              "options": [
+                "x = 5",
+                "5 = x",
+                "int x = 5",
+                "x == 5"
+              ],
+              "answer": 0,
+              "explanation": "Se asigna con =. En Python no hace falta declarar el tipo."
+            },
+            {
+              "type": "output",
+              "code": "edad = 20\nedad = edad + 1\nprint(edad)",
+              "options": [
+                "21",
+                "20",
+                "edad + 1",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Primero vale 20 y luego se le suma 1."
+            },
+            {
+              "type": "fill",
+              "prompt": "Guarda el texto Ana en la variable",
+              "code": "nombre = ___\nprint(nombre)",
+              "options": [
+                "\"Ana\"",
+                "Ana",
+                "print",
+                "="
+              ],
+              "answer": [
+                "\"Ana\""
+              ],
+              "explanation": "Los textos (strings) van entre comillas. Sin comillas, Python buscaría una variable llamada Ana."
+            },
+            {
+              "type": "output",
+              "code": "a = 3\nb = 4\nprint(a * b)",
+              "options": [
+                "12",
+                "7",
+                "34",
+                "a * b"
+              ],
+              "answer": 0,
+              "explanation": "El operador * multiplica: 3 × 4 = 12."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para que imprima 35",
+              "lines": [
+                "precio = 10",
+                "total = precio * 3",
+                "total = total + 5",
+                "print(total)"
+              ],
+              "explanation": "Una variable debe existir antes de usarla: 10 × 3 = 30, más 5 = 35."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "medio",
+      "title": "Tipos y decisiones",
+      "description": "Números, textos, booleanos y condicionales.",
+      "lessons": [
+        {
+          "id": "py-2-1",
+          "title": "Tipos de datos",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿Qué tipo de dato es 3.14?",
+              "options": [
+                "float",
+                "int",
+                "str",
+                "bool"
+              ],
+              "answer": 0,
+              "explanation": "Los números con decimales son float."
+            },
+            {
+              "type": "output",
+              "code": "print(type(\"7\"))",
+              "options": [
+                "<class 'str'>",
+                "<class 'int'>",
+                "7",
+                "str"
+              ],
+              "answer": 0,
+              "explanation": "Aunque parece un número, \"7\" va entre comillas: es un str."
+            },
+            {
+              "type": "output",
+              "code": "print(10 // 3)",
+              "options": [
+                "3",
+                "3.333",
+                "3.0",
+                "1"
+              ],
+              "answer": 0,
+              "explanation": "// es la división entera: descarta los decimales."
+            },
+            {
+              "type": "fill",
+              "prompt": "Convierte el texto en número entero para que imprima 43",
+              "code": "n = ___(\"42\")\nprint(n + 1)",
+              "options": [
+                "int",
+                "str",
+                "len",
+                "bool"
+              ],
+              "answer": [
+                "int"
+              ],
+              "explanation": "int() convierte el texto \"42\" en el número 42."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué resultado da 2 ** 3?",
+              "options": [
+                "8",
+                "6",
+                "9",
+                "23"
+              ],
+              "answer": 0,
+              "explanation": "** es potencia: 2 × 2 × 2 = 8."
+            }
+          ]
+        },
+        {
+          "id": "py-2-2",
+          "title": "Condicionales",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "x = 7\nif x > 5:\n    print(\"grande\")\nelse:\n    print(\"pequeño\")",
+              "options": [
+                "grande",
+                "pequeño",
+                "Error",
+                "No imprime nada"
+              ],
+              "answer": 0,
+              "explanation": "7 es mayor que 5, así que se ejecuta el bloque del if."
+            },
+            {
+              "type": "fill",
+              "prompt": "Completa la condición",
+              "code": "edad = 18\n___ edad >= 18:\n    print(\"Adulto\")",
+              "options": [
+                "if",
+                "for",
+                "when",
+                "case"
+              ],
+              "answer": [
+                "if"
+              ],
+              "explanation": "if evalúa una condición y ejecuta su bloque si es verdadera."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué palabra revisa otra condición si la primera es falsa?",
+              "options": [
+                "elif",
+                "else if",
+                "elseif",
+                "otherwise"
+              ],
+              "answer": 0,
+              "explanation": "En Python se escribe elif (abreviatura de \"else if\")."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena el programa",
+              "lines": [
+                "nota = 8",
+                "if nota >= 6:",
+                "    print(\"Aprobado\")",
+                "else:",
+                "    print(\"Reprobado\")"
+              ],
+              "explanation": "else va al mismo nivel que if, y el código de cada bloque lleva sangría."
+            },
+            {
+              "type": "output",
+              "code": "print(5 == 5 and 3 > 4)",
+              "options": [
+                "False",
+                "True",
+                "Error",
+                "5"
+              ],
+              "answer": 0,
+              "explanation": "and solo es True si ambas partes lo son, y 3 > 4 es False."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "intermedio",
+      "title": "Bucles y funciones",
+      "description": "Repite tareas y organiza tu código.",
+      "lessons": [
+        {
+          "id": "py-3-1",
+          "title": "Bucles",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "for i in range(3):\n    print(i)",
+              "options": [
+                "0\n1\n2",
+                "1\n2\n3",
+                "0\n1\n2\n3",
+                "3"
+              ],
+              "answer": 0,
+              "explanation": "range(3) genera 0, 1 y 2: empieza en 0 y no incluye el 3."
+            },
+            {
+              "type": "fill",
+              "prompt": "Recorre cada letra",
+              "code": "for letra ___ \"hola\":\n    print(letra)",
+              "options": [
+                "in",
+                "of",
+                "on",
+                "="
+              ],
+              "answer": [
+                "in"
+              ],
+              "explanation": "La sintaxis es: for elemento in secuencia."
+            },
+            {
+              "type": "output",
+              "code": "total = 0\nfor n in [1, 2, 3]:\n    total += n\nprint(total)",
+              "options": [
+                "6",
+                "123",
+                "3",
+                "0"
+              ],
+              "answer": 0,
+              "explanation": "Se suman 1 + 2 + 3 = 6."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué hace break dentro de un bucle?",
+              "options": [
+                "Sale del bucle inmediatamente",
+                "Salta a la siguiente vuelta",
+                "Reinicia el bucle",
+                "Termina el programa"
+              ],
+              "answer": 0,
+              "explanation": "break corta el bucle; continue es el que salta a la siguiente vuelta."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para imprimir 3, 2 y 1",
+              "lines": [
+                "n = 3",
+                "while n > 0:",
+                "    print(n)",
+                "    n -= 1"
+              ],
+              "explanation": "Primero se imprime y después se resta 1, hasta que n llega a 0."
+            }
+          ]
+        },
+        {
+          "id": "py-3-2",
+          "title": "Funciones",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Define la función",
+              "code": "___ saludar(nombre):\n    return \"Hola \" + nombre",
+              "options": [
+                "def",
+                "function",
+                "fun",
+                "func"
+              ],
+              "answer": [
+                "def"
+              ],
+              "explanation": "Las funciones en Python se definen con def."
+            },
+            {
+              "type": "output",
+              "code": "def doble(x):\n    return x * 2\n\nprint(doble(4))",
+              "options": [
+                "8",
+                "4",
+                "x * 2",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "La función devuelve 4 × 2."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué devuelve una función que no tiene return?",
+              "options": [
+                "None",
+                "0",
+                "\"\"",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Sin return, una función devuelve None automáticamente."
+            },
+            {
+              "type": "output",
+              "code": "def suma(a, b=10):\n    return a + b\n\nprint(suma(5))",
+              "options": [
+                "15",
+                "5",
+                "Error",
+                "510"
+              ],
+              "answer": 0,
+              "explanation": "b tiene valor por defecto 10, así que suma(5) es 5 + 10."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena la función y su uso",
+              "lines": [
+                "def area(base, altura):",
+                "    resultado = base * altura",
+                "    return resultado",
+                "print(area(3, 4))"
+              ],
+              "explanation": "La función se define antes de llamarla. Imprime 12."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "avanzado",
+      "title": "Colecciones",
+      "description": "Listas, diccionarios, conjuntos y comprensiones.",
+      "lessons": [
+        {
+          "id": "py-4-1",
+          "title": "Listas y diccionarios",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "nums = [10, 20, 30]\nprint(nums[-1])",
+              "options": [
+                "30",
+                "10",
+                "-1",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "El índice -1 es el último elemento de la lista."
+            },
+            {
+              "type": "fill",
+              "prompt": "Agrega \"uva\" al final de la lista",
+              "code": "frutas = [\"pera\"]\nfrutas.___(\"uva\")\nprint(frutas)",
+              "options": [
+                "append",
+                "add",
+                "push",
+                "insert"
+              ],
+              "answer": [
+                "append"
+              ],
+              "explanation": "append() agrega un elemento al final de una lista."
+            },
+            {
+              "type": "output",
+              "code": "edades = {\"ana\": 25, \"luis\": 30}\nprint(edades[\"luis\"])",
+              "options": [
+                "30",
+                "25",
+                "luis",
+                "KeyError"
+              ],
+              "answer": 0,
+              "explanation": "En un diccionario accedes al valor usando su clave."
+            },
+            {
+              "type": "output",
+              "code": "print([1, 2, 3, 4][1:3])",
+              "options": [
+                "[2, 3]",
+                "[1, 2, 3]",
+                "[2, 3, 4]",
+                "[1, 2]"
+              ],
+              "answer": 0,
+              "explanation": "El corte [1:3] toma los índices 1 y 2; el 3 no se incluye."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué estructura NO permite elementos repetidos?",
+              "options": [
+                "set",
+                "list",
+                "tuple",
+                "str"
+              ],
+              "answer": 0,
+              "explanation": "Un set (conjunto) guarda cada valor una sola vez."
+            }
+          ]
+        },
+        {
+          "id": "py-4-2",
+          "title": "Texto y comprensiones",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "print(\"python\".upper())",
+              "options": [
+                "PYTHON",
+                "Python",
+                "python",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "upper() convierte todo el texto a mayúsculas."
+            },
+            {
+              "type": "output",
+              "code": "cuadrados = [n * n for n in range(4)]\nprint(cuadrados)",
+              "options": [
+                "[0, 1, 4, 9]",
+                "[1, 4, 9, 16]",
+                "[0, 1, 2, 3]",
+                "[0, 2, 4, 6]"
+              ],
+              "answer": 0,
+              "explanation": "La comprensión calcula n * n para n = 0, 1, 2 y 3."
+            },
+            {
+              "type": "fill",
+              "prompt": "Separa el texto por comas",
+              "code": "letras = \"a,b,c\".___(\",\")\nprint(letras)",
+              "options": [
+                "split",
+                "join",
+                "cut",
+                "strip"
+              ],
+              "answer": [
+                "split"
+              ],
+              "explanation": "split(\",\") divide el texto y devuelve la lista ['a', 'b', 'c']."
+            },
+            {
+              "type": "output",
+              "code": "nombre = \"Ana\"\nprint(f\"Hola {nombre}!\")",
+              "options": [
+                "Hola Ana!",
+                "Hola {nombre}!",
+                "f\"Hola Ana!\"",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Las f-strings reemplazan lo que está entre llaves por su valor."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para guardar los números pares del 0 al 5",
+              "lines": [
+                "pares = []",
+                "for n in range(6):",
+                "    if n % 2 == 0:",
+                "        pares.append(n)",
+                "print(pares)"
+              ],
+              "explanation": "Imprime [0, 2, 4]. Cada nivel de sangría marca qué está dentro de qué."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "title": "Objetos y errores",
+      "description": "Clases, herencia y manejo de excepciones.",
+      "lessons": [
+        {
+          "id": "py-5-1",
+          "title": "Clases",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Completa el constructor",
+              "code": "class Perro:\n    def ___(self, nombre):\n        self.nombre = nombre",
+              "options": [
+                "__init__",
+                "init",
+                "constructor",
+                "new"
+              ],
+              "answer": [
+                "__init__"
+              ],
+              "explanation": "__init__ se ejecuta al crear un objeto y prepara sus atributos."
+            },
+            {
+              "type": "output",
+              "code": "class Contador:\n    def __init__(self):\n        self.valor = 0\n\n    def sumar(self):\n        self.valor += 1\n\nc = Contador()\nc.sumar()\nc.sumar()\nprint(c.valor)",
+              "options": [
+                "2",
+                "0",
+                "1",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Cada llamada a sumar() incrementa valor en 1."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué representa self en un método?",
+              "options": [
+                "La instancia actual del objeto",
+                "La clase padre",
+                "Una variable global",
+                "El módulo actual"
+              ],
+              "answer": 0,
+              "explanation": "self es el propio objeto sobre el que se llama el método."
+            },
+            {
+              "type": "output",
+              "code": "class Animal:\n    def sonido(self):\n        return \"...\"\n\nclass Gato(Animal):\n    def sonido(self):\n        return \"Miau\"\n\nprint(Gato().sonido())",
+              "options": [
+                "Miau",
+                "...",
+                "Error",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Gato hereda de Animal y sobrescribe sonido()."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para crear el punto e imprimir 5",
+              "lines": [
+                "class Punto:",
+                "    def __init__(self, x):",
+                "        self.x = x",
+                "p = Punto(5)",
+                "print(p.x)"
+              ],
+              "explanation": "Primero se define la clase, luego se crea el objeto y al final se usa."
+            }
+          ]
+        },
+        {
+          "id": "py-5-2",
+          "title": "Excepciones",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "try:\n    print(10 / 0)\nexcept ZeroDivisionError:\n    print(\"No se puede dividir entre 0\")",
+              "options": [
+                "No se puede dividir entre 0",
+                "Infinity",
+                "0",
+                "ZeroDivisionError"
+              ],
+              "answer": 0,
+              "explanation": "La división entre 0 lanza ZeroDivisionError y el except la captura."
+            },
+            {
+              "type": "fill",
+              "prompt": "Captura el error de conversión",
+              "code": "try:\n    n = int(\"abc\")\n___ ValueError:\n    print(\"No es un número\")",
+              "options": [
+                "except",
+                "catch",
+                "rescue",
+                "error"
+              ],
+              "answer": [
+                "except"
+              ],
+              "explanation": "En Python los errores se capturan con try / except."
+            },
+            {
+              "type": "output",
+              "code": "try:\n    print(\"A\")\nfinally:\n    print(\"B\")",
+              "options": [
+                "A\nB",
+                "A",
+                "B",
+                "B\nA"
+              ],
+              "answer": 0,
+              "explanation": "El bloque finally se ejecuta siempre, haya error o no."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué palabra lanza una excepción a propósito?",
+              "options": [
+                "raise",
+                "throw",
+                "error",
+                "except"
+              ],
+              "answer": 0,
+              "explanation": "raise ValueError(\"mensaje\") lanza una excepción."
+            },
+            {
+              "type": "output",
+              "code": "with open(\"datos.txt\", \"w\") as f:\n    f.write(\"hola\")\nprint(f.closed)",
+              "options": [
+                "True",
+                "False",
+                "hola",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "with cierra el archivo automáticamente al salir del bloque."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

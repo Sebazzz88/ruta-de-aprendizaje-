@@ -1,0 +1,725 @@
+{
+  "id": "powershell",
+  "units": [
+    {
+      "level": "regular",
+      "title": "Primeros pasos",
+      "description": "Muestra mensajes y usa variables.",
+      "lessons": [
+        {
+          "id": "ps-1-1",
+          "title": "Hola, mundo",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿Qué cmdlet envía texto a la salida?",
+              "options": [
+                "Write-Output",
+                "print",
+                "console.log",
+                "puts"
+              ],
+              "answer": 0,
+              "explanation": "Write-Output envía objetos a la salida; echo es un alias."
+            },
+            {
+              "type": "fill",
+              "prompt": "Muestra Hola en la consola",
+              "code": "___-Host \"Hola\"",
+              "options": [
+                "Write",
+                "Print",
+                "Show",
+                "Echo"
+              ],
+              "answer": [
+                "Write"
+              ],
+              "explanation": "Write-Host escribe directamente en la pantalla."
+            },
+            {
+              "type": "output",
+              "code": "Write-Output (\"Hola, \" + \"mundo\")",
+              "options": [
+                "Hola, mundo",
+                "Hola,mundo",
+                "Error",
+                "\"Hola, mundo\""
+              ],
+              "answer": 0,
+              "explanation": "+ concatena los textos."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Con qué símbolo empieza un comentario?",
+              "options": [
+                "#",
+                "//",
+                "--",
+                ";"
+              ],
+              "answer": 0,
+              "explanation": "# inicia un comentario de una línea."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para mostrar Uno, Dos y Tres",
+              "lines": [
+                "Write-Output \"Uno\"",
+                "Write-Output \"Dos\"",
+                "Write-Output \"Tres\""
+              ],
+              "explanation": "Los comandos se ejecutan en orden."
+            }
+          ]
+        },
+        {
+          "id": "ps-1-2",
+          "title": "Variables",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿Cómo se escribe una variable en PowerShell?",
+              "options": [
+                "$nombre",
+                "nombre",
+                "@nombre",
+                "%nombre%"
+              ],
+              "answer": 0,
+              "explanation": "Todas las variables empiezan con $."
+            },
+            {
+              "type": "output",
+              "code": "$edad = 20\n$edad++\n$edad",
+              "options": [
+                "21",
+                "20",
+                "Error",
+                "$edad"
+              ],
+              "answer": 0,
+              "explanation": "Escribir una variable sola muestra su valor."
+            },
+            {
+              "type": "fill",
+              "prompt": "Inserta la variable en el texto",
+              "code": "$nombre = \"Ana\"\nWrite-Output \"Hola ___\"",
+              "options": [
+                "$nombre",
+                "nombre",
+                "{nombre}",
+                "%nombre%"
+              ],
+              "answer": [
+                "$nombre"
+              ],
+              "explanation": "Con comillas dobles, las variables se reemplazan por su valor."
+            },
+            {
+              "type": "output",
+              "code": "$a = 7\n$b = 2\n$a / $b",
+              "options": [
+                "3.5",
+                "3",
+                "4",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "En PowerShell, / devuelve decimales si hace falta."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para que muestre 35",
+              "lines": [
+                "$precio = 10",
+                "$total = $precio * 3",
+                "$total += 5",
+                "Write-Output $total"
+              ],
+              "explanation": "10 × 3 = 30, más 5 = 35."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "medio",
+      "title": "Tipos y decisiones",
+      "description": "Comillas, comparaciones y condicionales.",
+      "lessons": [
+        {
+          "id": "ps-2-1",
+          "title": "Tipos y comparaciones",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "$x = 5\nWrite-Output 'Valor: $x'",
+              "options": [
+                "Valor: $x",
+                "Valor: 5",
+                "Error",
+                "Valor:"
+              ],
+              "answer": 0,
+              "explanation": "Con comillas simples el texto es literal: no se reemplaza $x."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué operador significa \"mayor que\"?",
+              "options": [
+                "-gt",
+                ">",
+                "-mt",
+                "gt"
+              ],
+              "answer": 0,
+              "explanation": "En PowerShell, > sirve para redirigir a un archivo; para comparar se usa -gt."
+            },
+            {
+              "type": "output",
+              "code": "5 -eq 5",
+              "options": [
+                "True",
+                "False",
+                "5",
+                "1"
+              ],
+              "answer": 0,
+              "explanation": "-eq compara igualdad y devuelve True o False."
+            },
+            {
+              "type": "fill",
+              "prompt": "Convierte el texto en entero para que muestre 43",
+              "code": "[___]$n = \"42\"\n$n + 1",
+              "options": [
+                "int",
+                "string",
+                "number",
+                "text"
+              ],
+              "answer": [
+                "int"
+              ],
+              "explanation": "[int] fuerza a que la variable sea un entero."
+            },
+            {
+              "type": "output",
+              "code": "\"10\" + 5",
+              "options": [
+                "105",
+                "15",
+                "Error",
+                "10 5"
+              ],
+              "answer": 0,
+              "explanation": "Si el primer operando es texto, + concatena."
+            }
+          ]
+        },
+        {
+          "id": "ps-2-2",
+          "title": "Condicionales",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "$x = 7\nif ($x -gt 5) {\n  \"grande\"\n} else {\n  \"pequeño\"\n}",
+              "options": [
+                "grande",
+                "pequeño",
+                "Error",
+                "Nada"
+              ],
+              "answer": 0,
+              "explanation": "7 es mayor que 5."
+            },
+            {
+              "type": "fill",
+              "prompt": "Completa la comparación \"mayor o igual\"",
+              "code": "$edad = 18\nif ($edad ___ 18) {\n  \"Adulto\"\n}",
+              "options": [
+                "-ge",
+                ">=",
+                "=>",
+                "-gte"
+              ],
+              "answer": [
+                "-ge"
+              ],
+              "explanation": "-ge = greater or equal."
+            },
+            {
+              "type": "output",
+              "code": "$dia = 2\nswitch ($dia) {\n  1 { \"Lunes\" }\n  2 { \"Martes\" }\n  default { \"Otro\" }\n}",
+              "options": [
+                "Martes",
+                "Lunes",
+                "Otro",
+                "Martes\nOtro"
+              ],
+              "answer": 0,
+              "explanation": "default solo se usa si ningún caso coincide."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué operador significa \"y\" lógico?",
+              "options": [
+                "-and",
+                "&&",
+                "and",
+                "-y"
+              ],
+              "answer": 0,
+              "explanation": "Los operadores lógicos son -and, -or y -not."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena el script",
+              "lines": [
+                "$nota = 8",
+                "if ($nota -ge 6) {",
+                "  \"Aprobado\"",
+                "} else {",
+                "  \"Reprobado\"",
+                "}"
+              ],
+              "explanation": "else va justo después de cerrar el bloque del if."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "intermedio",
+      "title": "Bucles y funciones",
+      "description": "Pipeline, bucles y funciones.",
+      "lessons": [
+        {
+          "id": "ps-3-1",
+          "title": "Bucles y pipeline",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "1..3 | ForEach-Object { $_ * 2 }",
+              "options": [
+                "2\n4\n6",
+                "1\n2\n3",
+                "6",
+                "2 4 6"
+              ],
+              "answer": 0,
+              "explanation": "Cada número pasa por el pipeline y se multiplica por 2."
+            },
+            {
+              "type": "fill",
+              "prompt": "Recorre los números",
+              "code": "foreach ($n ___ 1..3) {\n  $n\n}",
+              "options": [
+                "in",
+                "of",
+                "from",
+                "-in"
+              ],
+              "answer": [
+                "in"
+              ],
+              "explanation": "La sintaxis es foreach ($x in $coleccion)."
+            },
+            {
+              "type": "output",
+              "code": "$total = 0\nforeach ($n in 1..4) { $total += $n }\n$total",
+              "options": [
+                "10",
+                "4",
+                "1234",
+                "9"
+              ],
+              "answer": 0,
+              "explanation": "1 + 2 + 3 + 4 = 10."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué representa $_ dentro de ForEach-Object?",
+              "options": [
+                "El elemento actual del pipeline",
+                "La última variable creada",
+                "El resultado anterior",
+                "Un error"
+              ],
+              "answer": 0,
+              "explanation": "$_ (o $PSItem) es el objeto que se está procesando."
+            },
+            {
+              "type": "output",
+              "code": "1..6 | Where-Object { $_ % 2 -eq 0 }",
+              "options": [
+                "2\n4\n6",
+                "1\n3\n5",
+                "3",
+                "True"
+              ],
+              "answer": 0,
+              "explanation": "Where-Object filtra: deja pasar solo los pares."
+            }
+          ]
+        },
+        {
+          "id": "ps-3-2",
+          "title": "Funciones",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Define la función",
+              "code": "___ Get-Doble($x) {\n  $x * 2\n}",
+              "options": [
+                "function",
+                "def",
+                "func",
+                "cmdlet"
+              ],
+              "answer": [
+                "function"
+              ],
+              "explanation": "Las funciones se crean con function."
+            },
+            {
+              "type": "output",
+              "code": "function Get-Doble($x) { $x * 2 }\nGet-Doble 4",
+              "options": [
+                "8",
+                "4",
+                "Error",
+                "$x * 2"
+              ],
+              "answer": 0,
+              "explanation": "La función devuelve todo lo que sale de su cuerpo."
+            },
+            {
+              "type": "output",
+              "code": "function Saludo {\n  param($Nombre = \"amigo\")\n  \"Hola $Nombre\"\n}\nSaludo",
+              "options": [
+                "Hola amigo",
+                "Hola ",
+                "Error",
+                "Hola $Nombre"
+              ],
+              "answer": 0,
+              "explanation": "Sin argumento se usa el valor por defecto."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Cómo se pasan argumentos a una función en PowerShell?",
+              "options": [
+                "Separados por espacios, sin paréntesis",
+                "Entre paréntesis y con comas",
+                "Con punto y coma",
+                "Con corchetes"
+              ],
+              "answer": 0,
+              "explanation": "Ejemplo: Get-Area 3 4. Con (3, 4) pasarías un arreglo."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena la función y su uso",
+              "lines": [
+                "function Get-Area($b, $h) {",
+                "  $b * $h",
+                "}",
+                "Get-Area 3 4"
+              ],
+              "explanation": "Muestra 12."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "avanzado",
+      "title": "Colecciones y objetos",
+      "description": "Arreglos, tablas hash y objetos.",
+      "lessons": [
+        {
+          "id": "ps-4-1",
+          "title": "Arreglos y hashtables",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "$nums = @(10, 20, 30)\n$nums[-1]",
+              "options": [
+                "30",
+                "10",
+                "-1",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "El índice -1 es el último elemento."
+            },
+            {
+              "type": "output",
+              "code": "$nums = @(10, 20, 30)\n$nums.Count",
+              "options": [
+                "3",
+                "2",
+                "30",
+                "60"
+              ],
+              "answer": 0,
+              "explanation": "Count es la cantidad de elementos."
+            },
+            {
+              "type": "fill",
+              "prompt": "Crea una tabla hash",
+              "code": "$persona = ___{ Nombre = \"Ana\"; Edad = 25 }\n$persona.Edad",
+              "options": [
+                "@",
+                "$",
+                "#",
+                "%"
+              ],
+              "answer": [
+                "@"
+              ],
+              "explanation": "@{ } crea una tabla hash; @( ) crea un arreglo."
+            },
+            {
+              "type": "output",
+              "code": "$h = @{ ana = 25; luis = 30 }\n$h[\"luis\"]",
+              "options": [
+                "30",
+                "25",
+                "luis",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Se consulta por clave."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué cmdlet ordena objetos?",
+              "options": [
+                "Sort-Object",
+                "Order-Object",
+                "Arrange-Item",
+                "Get-Sorted"
+              ],
+              "answer": 0,
+              "explanation": "Ejemplo: Get-Process | Sort-Object CPU."
+            }
+          ]
+        },
+        {
+          "id": "ps-4-2",
+          "title": "Texto y objetos",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "\"powershell\".ToUpper()",
+              "options": [
+                "POWERSHELL",
+                "PowerShell",
+                "powershell",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Los textos son objetos .NET y tienen métodos como ToUpper()."
+            },
+            {
+              "type": "output",
+              "code": "(\"a,b,c\" -split \",\").Count",
+              "options": [
+                "3",
+                "2",
+                "5",
+                "a b c"
+              ],
+              "answer": 0,
+              "explanation": "-split divide el texto en 3 partes."
+            },
+            {
+              "type": "fill",
+              "prompt": "Reemplaza \"mundo\" por \"PowerShell\"",
+              "code": "\"hola mundo\" ___ \"mundo\", \"PowerShell\"",
+              "options": [
+                "-replace",
+                "-split",
+                "-join",
+                "-match"
+              ],
+              "answer": [
+                "-replace"
+              ],
+              "explanation": "-replace patrón, reemplazo."
+            },
+            {
+              "type": "output",
+              "code": "\"uno\", \"dos\" -join \"-\"",
+              "options": [
+                "uno-dos",
+                "uno dos",
+                "-uno-dos",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "-join une los elementos con el separador."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para listar los archivos de más de 1 MB",
+              "lines": [
+                "$archivos = Get-ChildItem",
+                "$grandes = $archivos | Where-Object { $_.Length -gt 1MB }",
+                "$grandes | Select-Object Name"
+              ],
+              "explanation": "Obtener, filtrar y luego elegir qué mostrar."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "title": "Scripts robustos",
+      "description": "Errores, clases y funciones avanzadas.",
+      "lessons": [
+        {
+          "id": "ps-5-1",
+          "title": "Errores",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Intenta el comando y captura el error",
+              "code": "___ {\n  Get-Item \"no-existe.txt\" -ErrorAction Stop\n} catch {\n  \"No encontrado\"\n}",
+              "options": [
+                "try",
+                "begin",
+                "do",
+                "test"
+              ],
+              "answer": [
+                "try"
+              ],
+              "explanation": "try / catch captura errores que detienen la ejecución."
+            },
+            {
+              "type": "output",
+              "code": "try {\n  throw \"fallo\"\n} catch {\n  \"Capturado: $_\"\n}",
+              "options": [
+                "Capturado: fallo",
+                "fallo",
+                "Capturado: $_",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Dentro de catch, $_ es el error capturado."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué hace -ErrorAction Stop?",
+              "options": [
+                "Convierte el error en uno que try/catch puede capturar",
+                "Ignora el error",
+                "Cierra PowerShell",
+                "Reintenta el comando"
+              ],
+              "answer": 0,
+              "explanation": "Muchos errores no detienen la ejecución; Stop hace que sí."
+            },
+            {
+              "type": "output",
+              "code": "try {\n  \"A\"\n} finally {\n  \"B\"\n}",
+              "options": [
+                "A\nB",
+                "A",
+                "B",
+                "B\nA"
+              ],
+              "answer": 0,
+              "explanation": "finally se ejecuta siempre."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué variable automática guarda el último error?",
+              "options": [
+                "$Error[0]",
+                "$LastError",
+                "$_Error",
+                "$Err"
+              ],
+              "answer": 0,
+              "explanation": "$Error es una lista; el más reciente está en la posición 0."
+            }
+          ]
+        },
+        {
+          "id": "ps-5-2",
+          "title": "Clases y funciones avanzadas",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Define la clase",
+              "code": "___ Perro {\n  [string]$Nombre\n  Perro([string]$n) { $this.Nombre = $n }\n}",
+              "options": [
+                "class",
+                "function",
+                "struct",
+                "object"
+              ],
+              "answer": [
+                "class"
+              ],
+              "explanation": "PowerShell 5 o superior permite definir clases."
+            },
+            {
+              "type": "output",
+              "code": "class Contador {\n  [int]$Valor = 0\n  [void]Sumar() { $this.Valor++ }\n}\n$c = [Contador]::new()\n$c.Sumar()\n$c.Sumar()\n$c.Valor",
+              "options": [
+                "2",
+                "0",
+                "1",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Cada Sumar() incrementa Valor."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué atributo convierte una función en avanzada (con -Verbose y otros parámetros comunes)?",
+              "options": [
+                "[CmdletBinding()]",
+                "[Advanced()]",
+                "[Function()]",
+                "[Param()]"
+              ],
+              "answer": 0,
+              "explanation": "CmdletBinding hace que la función se comporte como un cmdlet."
+            },
+            {
+              "type": "output",
+              "code": "function Test-Num {\n  param([ValidateRange(1, 10)][int]$N)\n  \"OK $N\"\n}\nTest-Num 5",
+              "options": [
+                "OK 5",
+                "Error",
+                "OK",
+                "5"
+              ],
+              "answer": 0,
+              "explanation": "5 está dentro del rango 1 a 10, así que es válido."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para que muestre 5",
+              "lines": [
+                "class Punto {",
+                "  [int]$X = 5",
+                "}",
+                "$p = [Punto]::new()",
+                "$p.X"
+              ],
+              "explanation": "Primero la clase, luego el objeto."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

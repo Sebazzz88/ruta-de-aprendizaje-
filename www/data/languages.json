@@ -1,0 +1,72 @@
+[
+  {
+    "id": "python",
+    "name": "Python",
+    "short": "Py",
+    "description": "Fácil de leer. Ideal para empezar, datos e IA.",
+    "file": "python.json"
+  },
+  {
+    "id": "javascript",
+    "name": "JavaScript",
+    "short": "JS",
+    "description": "El lenguaje de la web: páginas y apps interactivas.",
+    "file": "javascript.json"
+  },
+  {
+    "id": "java",
+    "name": "Java",
+    "short": "Ja",
+    "description": "Orientado a objetos. Apps Android y sistemas grandes.",
+    "file": "java.json"
+  },
+  {
+    "id": "c",
+    "name": "C",
+    "short": "C",
+    "description": "Bajo nivel y muy rápido. Base de sistemas operativos.",
+    "file": "c.json"
+  },
+  {
+    "id": "cpp",
+    "name": "C++",
+    "short": "C++",
+    "description": "C con objetos. Videojuegos y alto rendimiento.",
+    "file": "cpp.json"
+  },
+  {
+    "id": "ruby",
+    "name": "Ruby",
+    "short": "Rb",
+    "description": "Elegante y expresivo. Famoso por Ruby on Rails.",
+    "file": "ruby.json"
+  },
+  {
+    "id": "assembly",
+    "name": "Assembly",
+    "short": "ASM",
+    "description": "Habla directo con el CPU (x86-64, NASM).",
+    "file": "assembly.json"
+  },
+  {
+    "id": "powershell",
+    "name": "PowerShell",
+    "short": "PS",
+    "description": "Automatiza tareas en Windows y servidores.",
+    "file": "powershell.json"
+  },
+  {
+    "id": "html",
+    "name": "HTML",
+    "short": "HTML",
+    "description": "Estructura de las páginas web. Lenguaje de marcado.",
+    "file": "html.json"
+  },
+  {
+    "id": "perl",
+    "name": "Perl",
+    "short": "Pl",
+    "description": "Procesamiento de texto y scripts de sistema.",
+    "file": "perl.json"
+  }
+]

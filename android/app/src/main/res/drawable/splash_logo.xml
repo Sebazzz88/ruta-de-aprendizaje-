@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Logo de la pantalla de carga: cuadro verde redondeado con "</>". -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <path
+        android:pathData="M24,0 H72 A24,24 0 0 1 96,24 V72 A24,24 0 0 1 72,96 H24 A24,24 0 0 1 0,72 V24 A24,24 0 0 1 24,0 Z"
+        android:fillColor="#58CC02" />
+    <path
+        android:pathData="M37,33 L24,48 L37,63 M59,33 L72,48 L59,63 M53,30 L43,66"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="6"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000" />
+</vector>

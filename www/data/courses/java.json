@@ -1,0 +1,729 @@
+{
+  "id": "java",
+  "units": [
+    {
+      "level": "regular",
+      "title": "Primeros pasos",
+      "description": "Tu primer programa y variables.",
+      "lessons": [
+        {
+          "id": "java-1-1",
+          "title": "Hola, mundo",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿Qué instrucción imprime una línea en Java?",
+              "options": [
+                "System.out.println()",
+                "print()",
+                "console.log()",
+                "echo"
+              ],
+              "answer": 0,
+              "explanation": "System.out.println() imprime el texto y agrega un salto de línea."
+            },
+            {
+              "type": "fill",
+              "prompt": "Completa para imprimir Hola",
+              "code": "public class Main {\n  public static void main(String[] args) {\n    System.out.___(\"Hola\");\n  }\n}",
+              "options": [
+                "println",
+                "log",
+                "printline",
+                "write"
+              ],
+              "answer": [
+                "println"
+              ],
+              "explanation": "El método es println (print line)."
+            },
+            {
+              "type": "output",
+              "code": "System.out.println(\"Hola\" + \" \" + \"Java\");",
+              "options": [
+                "Hola Java",
+                "HolaJava",
+                "\"Hola\" \"Java\"",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "+ une los textos, incluido el espacio del medio."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Con qué símbolo termina cada instrucción en Java?",
+              "options": [
+                ";",
+                ":",
+                ".",
+                "Con nada"
+              ],
+              "answer": 0,
+              "explanation": "Cada instrucción termina en punto y coma."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena el programa",
+              "lines": [
+                "public class Main {",
+                "  public static void main(String[] args) {",
+                "    System.out.println(\"Hola\");",
+                "  }",
+                "}"
+              ],
+              "explanation": "El método main va dentro de la clase, y el código dentro de main."
+            }
+          ]
+        },
+        {
+          "id": "java-1-2",
+          "title": "Variables",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿Cómo declaras un número entero x con valor 5?",
+              "options": [
+                "int x = 5;",
+                "x = 5",
+                "var x := 5",
+                "integer x = 5;"
+              ],
+              "answer": 0,
+              "explanation": "En Java se indica el tipo antes del nombre: int x = 5;"
+            },
+            {
+              "type": "output",
+              "code": "int edad = 20;\nedad = edad + 1;\nSystem.out.println(edad);",
+              "options": [
+                "21",
+                "20",
+                "edad + 1",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "A 20 se le suma 1."
+            },
+            {
+              "type": "fill",
+              "prompt": "Declara una variable de texto",
+              "code": "___ nombre = \"Ana\";\nSystem.out.println(nombre);",
+              "options": [
+                "String",
+                "string",
+                "char",
+                "text"
+              ],
+              "answer": [
+                "String"
+              ],
+              "explanation": "String va con S mayúscula: es una clase."
+            },
+            {
+              "type": "output",
+              "code": "int a = 7;\nint b = 2;\nSystem.out.println(a / b);",
+              "options": [
+                "3",
+                "3.5",
+                "4",
+                "3.0"
+              ],
+              "answer": 0,
+              "explanation": "Entre dos int, / hace división entera y descarta los decimales."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para que imprima 35",
+              "lines": [
+                "int precio = 10;",
+                "int total = precio * 3;",
+                "total = total + 5;",
+                "System.out.println(total);"
+              ],
+              "explanation": "10 × 3 = 30, más 5 = 35."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "medio",
+      "title": "Tipos y decisiones",
+      "description": "Tipos primitivos, conversiones y condicionales.",
+      "lessons": [
+        {
+          "id": "java-2-1",
+          "title": "Tipos",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿Qué tipo guarda verdadero o falso?",
+              "options": [
+                "boolean",
+                "bool",
+                "bit",
+                "logic"
+              ],
+              "answer": 0,
+              "explanation": "En Java se llama boolean."
+            },
+            {
+              "type": "output",
+              "code": "double d = 10 / 4;\nSystem.out.println(d);",
+              "options": [
+                "2.0",
+                "2.5",
+                "2",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "10 / 4 se calcula entre enteros (da 2) y luego se guarda como double: 2.0."
+            },
+            {
+              "type": "fill",
+              "prompt": "Convierte el texto en número para que imprima 43",
+              "code": "int n = Integer.___(\"42\");\nSystem.out.println(n + 1);",
+              "options": [
+                "parseInt",
+                "toInt",
+                "valueInt",
+                "parse"
+              ],
+              "answer": [
+                "parseInt"
+              ],
+              "explanation": "Integer.parseInt convierte un String en int."
+            },
+            {
+              "type": "output",
+              "code": "System.out.println(5 + 3 + \"A\");",
+              "options": [
+                "8A",
+                "53A",
+                "A8",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Se evalúa de izquierda a derecha: 5 + 3 = 8, y luego se une con \"A\"."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué tipo usarías para un solo carácter como 'a'?",
+              "options": [
+                "char",
+                "String",
+                "byte",
+                "letter"
+              ],
+              "answer": 0,
+              "explanation": "char guarda un carácter y se escribe con comillas simples."
+            }
+          ]
+        },
+        {
+          "id": "java-2-2",
+          "title": "Condicionales",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "int x = 7;\nif (x > 5) {\n  System.out.println(\"grande\");\n} else {\n  System.out.println(\"pequeño\");\n}",
+              "options": [
+                "grande",
+                "pequeño",
+                "Error",
+                "Nada"
+              ],
+              "answer": 0,
+              "explanation": "7 es mayor que 5."
+            },
+            {
+              "type": "fill",
+              "prompt": "Completa la condición",
+              "code": "int edad = 18;\n___ (edad >= 18) {\n  System.out.println(\"Adulto\");\n}",
+              "options": [
+                "if",
+                "when",
+                "case",
+                "for"
+              ],
+              "answer": [
+                "if"
+              ],
+              "explanation": "if (condición) { ... }"
+            },
+            {
+              "type": "output",
+              "code": "int dia = 2;\nswitch (dia) {\n  case 1: System.out.println(\"Lunes\"); break;\n  case 2: System.out.println(\"Martes\"); break;\n  default: System.out.println(\"Otro\");\n}",
+              "options": [
+                "Martes",
+                "Lunes",
+                "Otro",
+                "Martes\nOtro"
+              ],
+              "answer": 0,
+              "explanation": "Entra al case 2 y break evita que siga al default."
+            },
+            {
+              "type": "output",
+              "code": "System.out.println(5 > 3 && 2 > 4);",
+              "options": [
+                "false",
+                "true",
+                "Error",
+                "1"
+              ],
+              "answer": 0,
+              "explanation": "&& necesita que ambas sean verdaderas, y 2 > 4 es falsa."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena el programa",
+              "lines": [
+                "int nota = 8;",
+                "if (nota >= 6) {",
+                "  System.out.println(\"Aprobado\");",
+                "} else {",
+                "  System.out.println(\"Reprobado\");",
+                "}"
+              ],
+              "explanation": "else va justo después de cerrar el bloque del if."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "intermedio",
+      "title": "Bucles y métodos",
+      "description": "Repite tareas y crea métodos.",
+      "lessons": [
+        {
+          "id": "java-3-1",
+          "title": "Bucles",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "for (int i = 0; i < 3; i++) {\n  System.out.println(i);\n}",
+              "options": [
+                "0\n1\n2",
+                "1\n2\n3",
+                "0\n1\n2\n3",
+                "3"
+              ],
+              "answer": 0,
+              "explanation": "i toma los valores 0, 1 y 2."
+            },
+            {
+              "type": "fill",
+              "prompt": "Recorre el arreglo",
+              "code": "int[] nums = {1, 2, 3};\nfor (int n ___ nums) {\n  System.out.println(n);\n}",
+              "options": [
+                ":",
+                "in",
+                "of",
+                "->"
+              ],
+              "answer": [
+                ":"
+              ],
+              "explanation": "El for-each de Java usa dos puntos: for (tipo x : coleccion)."
+            },
+            {
+              "type": "output",
+              "code": "int total = 0;\nfor (int i = 1; i <= 4; i++) {\n  total += i;\n}\nSystem.out.println(total);",
+              "options": [
+                "10",
+                "4",
+                "15",
+                "9"
+              ],
+              "answer": 0,
+              "explanation": "1 + 2 + 3 + 4 = 10."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué bucle se ejecuta al menos una vez?",
+              "options": [
+                "do-while",
+                "while",
+                "for",
+                "for-each"
+              ],
+              "answer": 0,
+              "explanation": "do-while revisa la condición al final de cada vuelta."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para imprimir 3, 2 y 1",
+              "lines": [
+                "int n = 3;",
+                "while (n > 0) {",
+                "  System.out.println(n);",
+                "  n--;",
+                "}"
+              ],
+              "explanation": "Se imprime y luego se resta 1."
+            }
+          ]
+        },
+        {
+          "id": "java-3-2",
+          "title": "Métodos",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Completa el tipo de retorno",
+              "code": "static ___ doble(int x) {\n  return x * 2;\n}",
+              "options": [
+                "int",
+                "void",
+                "def",
+                "function"
+              ],
+              "answer": [
+                "int"
+              ],
+              "explanation": "Devuelve un entero, así que el tipo de retorno es int."
+            },
+            {
+              "type": "output",
+              "code": "static int suma(int a, int b) {\n  return a + b;\n}\n// en main:\nSystem.out.println(suma(2, 3));",
+              "options": [
+                "5",
+                "23",
+                "a + b",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "suma devuelve 2 + 3."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué significa void en un método?",
+              "options": [
+                "Que no devuelve nada",
+                "Que es privado",
+                "Que no recibe parámetros",
+                "Que es estático"
+              ],
+              "answer": 0,
+              "explanation": "void indica que el método no devuelve un valor."
+            },
+            {
+              "type": "output",
+              "code": "static String tipo(int x) { return \"int\"; }\nstatic String tipo(double x) { return \"double\"; }\n// en main:\nSystem.out.println(tipo(2.5));",
+              "options": [
+                "double",
+                "int",
+                "2.5",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Sobrecarga: Java elige el método según el tipo del argumento."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena el método",
+              "lines": [
+                "static int area(int b, int h) {",
+                "  int r = b * h;",
+                "  return r;",
+                "}"
+              ],
+              "explanation": "Primero se calcula y luego se devuelve."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "avanzado",
+      "title": "Arreglos y colecciones",
+      "description": "Arreglos, ArrayList, HashMap y texto.",
+      "lessons": [
+        {
+          "id": "java-4-1",
+          "title": "Arreglos y colecciones",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "int[] nums = {10, 20, 30};\nSystem.out.println(nums.length);",
+              "options": [
+                "3",
+                "2",
+                "30",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "length (sin paréntesis) da el tamaño de un arreglo."
+            },
+            {
+              "type": "output",
+              "code": "int[] nums = {10, 20, 30};\nSystem.out.println(nums[1]);",
+              "options": [
+                "20",
+                "10",
+                "30",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Los índices empiezan en 0, así que [1] es el segundo."
+            },
+            {
+              "type": "fill",
+              "prompt": "Agrega un elemento a la lista",
+              "code": "ArrayList<String> lista = new ArrayList<>();\nlista.___(\"pera\");\nSystem.out.println(lista.size());",
+              "options": [
+                "add",
+                "push",
+                "append",
+                "insert"
+              ],
+              "answer": [
+                "add"
+              ],
+              "explanation": "ArrayList usa add(). Imprime 1."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué colección guarda pares clave-valor?",
+              "options": [
+                "HashMap",
+                "ArrayList",
+                "HashSet",
+                "LinkedList"
+              ],
+              "answer": 0,
+              "explanation": "HashMap asocia cada clave con un valor."
+            },
+            {
+              "type": "output",
+              "code": "HashMap<String, Integer> edades = new HashMap<>();\nedades.put(\"ana\", 25);\nSystem.out.println(edades.get(\"ana\"));",
+              "options": [
+                "25",
+                "ana",
+                "null",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "get(clave) devuelve el valor guardado con put."
+            }
+          ]
+        },
+        {
+          "id": "java-4-2",
+          "title": "Texto",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "String s = \"java\";\nSystem.out.println(s.toUpperCase());",
+              "options": [
+                "JAVA",
+                "Java",
+                "java",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "toUpperCase() devuelve el texto en mayúsculas."
+            },
+            {
+              "type": "output",
+              "code": "System.out.println(\"hola\".length());",
+              "options": [
+                "4",
+                "5",
+                "3",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "En String, length() lleva paréntesis. \"hola\" tiene 4 letras."
+            },
+            {
+              "type": "fill",
+              "prompt": "Compara el contenido de los textos",
+              "code": "String a = \"hola\";\nString b = \"hola\";\nSystem.out.println(a.___(b));",
+              "options": [
+                "equals",
+                "same",
+                "is",
+                "compare"
+              ],
+              "answer": [
+                "equals"
+              ],
+              "explanation": "Para comparar el contenido de dos String se usa equals(), no ==."
+            },
+            {
+              "type": "output",
+              "code": "System.out.println(\"programar\".substring(0, 3));",
+              "options": [
+                "pro",
+                "prog",
+                "rog",
+                "ar"
+              ],
+              "answer": 0,
+              "explanation": "substring(0, 3) toma los índices 0, 1 y 2."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para que imprima Hola mundo",
+              "lines": [
+                "StringBuilder sb = new StringBuilder();",
+                "sb.append(\"Hola\");",
+                "sb.append(\" mundo\");",
+                "System.out.println(sb);"
+              ],
+              "explanation": "StringBuilder une textos de forma eficiente."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "title": "Objetos y excepciones",
+      "description": "Clases, herencia, interfaces y errores.",
+      "lessons": [
+        {
+          "id": "java-5-1",
+          "title": "Clases",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Completa el constructor",
+              "code": "class Perro {\n  String nombre;\n  ___(String nombre) {\n    this.nombre = nombre;\n  }\n}",
+              "options": [
+                "Perro",
+                "constructor",
+                "init",
+                "void"
+              ],
+              "answer": [
+                "Perro"
+              ],
+              "explanation": "El constructor se llama igual que la clase y no tiene tipo de retorno."
+            },
+            {
+              "type": "output",
+              "code": "class Contador {\n  int valor = 0;\n  void sumar() { valor++; }\n}\n// en main:\nContador c = new Contador();\nc.sumar();\nc.sumar();\nSystem.out.println(c.valor);",
+              "options": [
+                "2",
+                "0",
+                "1",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Cada llamada a sumar() incrementa valor."
+            },
+            {
+              "type": "output",
+              "code": "class Animal {\n  String sonido() { return \"...\"; }\n}\nclass Gato extends Animal {\n  @Override\n  String sonido() { return \"Miau\"; }\n}\n// en main:\nAnimal a = new Gato();\nSystem.out.println(a.sonido());",
+              "options": [
+                "Miau",
+                "...",
+                "Error",
+                "null"
+              ],
+              "answer": 0,
+              "explanation": "Polimorfismo: se ejecuta el método del objeto real (Gato)."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué modificador hace que un atributo solo se use dentro de su clase?",
+              "options": [
+                "private",
+                "public",
+                "protected",
+                "static"
+              ],
+              "answer": 0,
+              "explanation": "private limita el acceso a la propia clase."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué palabra permite que una clase herede de otra?",
+              "options": [
+                "extends",
+                "implements",
+                "inherits",
+                "super"
+              ],
+              "answer": 0,
+              "explanation": "class Gato extends Animal { ... }"
+            }
+          ]
+        },
+        {
+          "id": "java-5-2",
+          "title": "Excepciones e interfaces",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "try {\n  int x = 10 / 0;\n  System.out.println(x);\n} catch (ArithmeticException e) {\n  System.out.println(\"Error\");\n}",
+              "options": [
+                "Error",
+                "0",
+                "Infinity",
+                "10"
+              ],
+              "answer": 0,
+              "explanation": "Dividir un int entre 0 lanza ArithmeticException."
+            },
+            {
+              "type": "fill",
+              "prompt": "Haz que la clase cumpla la interfaz",
+              "code": "interface Figura {\n  double area();\n}\nclass Cuadrado ___ Figura {\n  public double area() { return 4; }\n}",
+              "options": [
+                "implements",
+                "extends",
+                "uses",
+                "inherits"
+              ],
+              "answer": [
+                "implements"
+              ],
+              "explanation": "Las clases implementan interfaces con implements."
+            },
+            {
+              "type": "output",
+              "code": "try {\n  System.out.println(\"A\");\n} finally {\n  System.out.println(\"B\");\n}",
+              "options": [
+                "A\nB",
+                "A",
+                "B",
+                "B\nA"
+              ],
+              "answer": 0,
+              "explanation": "finally se ejecuta siempre al final del try."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué bloque se ejecuta siempre, haya o no excepción?",
+              "options": [
+                "finally",
+                "catch",
+                "try",
+                "throw"
+              ],
+              "answer": 0,
+              "explanation": "finally sirve para liberar recursos pase lo que pase."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para capturar el error",
+              "lines": [
+                "try {",
+                "  int[] a = new int[2];",
+                "  a[5] = 1;",
+                "} catch (Exception e) {",
+                "  System.out.println(\"Fuera de rango\");",
+                "}"
+              ],
+              "explanation": "a[5] no existe y lanza una excepción que captura el catch."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

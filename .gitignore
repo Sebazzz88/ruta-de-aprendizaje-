@@ -1,0 +1,28 @@
+# Dependencias
+node_modules/
+
+# Android: compilados y archivos locales
+android/.gradle/
+android/build/
+android/app/build/
+android/capacitor-cordova-android-plugins/build/
+android/local.properties
+android/.idea/
+android/app/release/
+*.apk
+*.aab
+
+# Firmas y credenciales (nunca al repositorio)
+*.jks
+*.keystore
+keystore.properties
+.env
+.env.*
+
+# Sistema / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.log

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Codi</string>
+    <string name="title_activity_main">Codi</string>
+    <string name="package_name">com.sebazzz88.rutadeaprendizaje</string>
+    <string name="custom_url_scheme">com.sebazzz88.rutadeaprendizaje</string>
+</resources>

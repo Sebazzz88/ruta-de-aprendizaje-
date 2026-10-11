@@ -1,0 +1,148 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-duolingo-sans);
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.41;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--color-spark-blue);
+  outline-offset: 2px;
+}
+
+svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+#app {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+#screen {
+  padding: calc(env(safe-area-inset-top, 0px) + var(--spacing-16)) var(--spacing-16)
+    calc(var(--tabbar-h) + env(safe-area-inset-bottom, 0px) + var(--spacing-24));
+}
+
+body.no-tabbar #screen {
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + var(--spacing-16));
+}
+
+body.no-tabbar #tabbar {
+  display: none;
+}
+
+/* Tipografía */
+.display {
+  font-family: var(--font-feather);
+  font-weight: 800;
+  font-size: var(--text-heading);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
+  color: var(--color-eager-green);
+}
+
+.title {
+  font-size: var(--text-heading-sm);
+  line-height: var(--leading-heading-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--text);
+}
+
+.subheading {
+  font-size: var(--text-subheading);
+  line-height: var(--leading-subheading);
+  font-weight: var(--font-weight-bold);
+  color: var(--text);
+}
+
+.body-text {
+  font-size: var(--text-body);
+  color: var(--text-muted);
+}
+
+.caption {
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+  color: var(--text-muted);
+}
+
+.label {
+  font-size: var(--text-nav-label);
+  line-height: var(--leading-nav-label);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.053em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--element-gap);
+}
+
+.stack-24 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-24);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--element-gap);
+}
+
+.spacer {
+  flex: 1;
+}
+
+.row-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

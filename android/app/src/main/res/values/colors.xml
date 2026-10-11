@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores de "DESIGN (1).md": Paper White y Eager Green. -->
+    <color name="app_background">#FFFFFF</color>
+    <color name="app_green">#58CC02</color>
+</resources>

@@ -1,0 +1,744 @@
+{
+  "id": "assembly",
+  "units": [
+    {
+      "level": "regular",
+      "title": "Registros",
+      "description": "Qué es un registro y cómo mover y sumar valores.",
+      "lessons": [
+        {
+          "id": "asm-1-1",
+          "title": "Registros",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿Qué es un registro?",
+              "options": [
+                "Una memoria pequeña y muy rápida dentro del CPU",
+                "Un archivo en el disco",
+                "Una variable de Python",
+                "Un tipo de bucle"
+              ],
+              "answer": 0,
+              "explanation": "Los registros (rax, rbx, rcx...) guardan los datos con los que trabaja el CPU."
+            },
+            {
+              "type": "fill",
+              "prompt": "Guarda el número 5 en rax",
+              "code": "___ rax, 5",
+              "options": [
+                "mov",
+                "add",
+                "jmp",
+                "ret"
+              ],
+              "answer": [
+                "mov"
+              ],
+              "explanation": "mov destino, origen copia un valor."
+            },
+            {
+              "type": "output",
+              "prompt": "¿Qué valor queda en rbx?",
+              "code": "mov rax, 5\nmov rbx, rax",
+              "options": [
+                "5",
+                "0",
+                "rax",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "mov rbx, rax copia en rbx el valor de rax."
+            },
+            {
+              "type": "choice",
+              "prompt": "En NASM, ¿cómo empieza un comentario?",
+              "options": [
+                ";",
+                "#",
+                "//",
+                "--"
+              ],
+              "answer": 0,
+              "explanation": "Todo lo que va después de ; es un comentario."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para que rbx termine valiendo 7",
+              "lines": [
+                "mov rax, 3",
+                "add rax, 4",
+                "mov rbx, rax"
+              ],
+              "explanation": "rax = 3, luego 3 + 4 = 7, y se copia a rbx."
+            }
+          ]
+        },
+        {
+          "id": "asm-1-2",
+          "title": "Aritmética",
+          "exercises": [
+            {
+              "type": "output",
+              "prompt": "¿Qué valor queda en rax?",
+              "code": "mov rax, 10\nadd rax, 5\nsub rax, 3",
+              "options": [
+                "12",
+                "18",
+                "15",
+                "8"
+              ],
+              "answer": 0,
+              "explanation": "10 + 5 = 15, y 15 - 3 = 12."
+            },
+            {
+              "type": "fill",
+              "prompt": "Suma 1 a rax",
+              "code": "mov rax, 4\n___ rax  ; rax = 5",
+              "options": [
+                "inc",
+                "dec",
+                "add",
+                "neg"
+              ],
+              "answer": [
+                "inc"
+              ],
+              "explanation": "inc suma 1; dec resta 1."
+            },
+            {
+              "type": "output",
+              "prompt": "¿Qué valor queda en rax?",
+              "code": "mov rax, 6\nmov rbx, 7\nimul rax, rbx",
+              "options": [
+                "42",
+                "13",
+                "6",
+                "7"
+              ],
+              "answer": 0,
+              "explanation": "imul multiplica con signo: 6 × 7."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué hace dec rcx?",
+              "options": [
+                "Resta 1 a rcx",
+                "Suma 1 a rcx",
+                "Pone rcx en 0",
+                "Divide rcx entre 10"
+              ],
+              "answer": 0,
+              "explanation": "dec = decrementar."
+            },
+            {
+              "type": "output",
+              "prompt": "¿Qué valor queda en rax?",
+              "code": "mov rax, 8\nneg rax",
+              "options": [
+                "-8",
+                "8",
+                "0",
+                "1"
+              ],
+              "answer": 0,
+              "explanation": "neg cambia el signo del valor."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "medio",
+      "title": "Memoria y pila",
+      "description": "Secciones del programa, datos en memoria y la pila.",
+      "lessons": [
+        {
+          "id": "asm-2-1",
+          "title": "Secciones y datos",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿En qué sección se declaran los datos con valor inicial?",
+              "options": [
+                "section .data",
+                "section .text",
+                "section .bss",
+                "section .code"
+              ],
+              "answer": 0,
+              "explanation": ".data guarda datos inicializados; .bss reserva espacio sin valor."
+            },
+            {
+              "type": "fill",
+              "prompt": "Declara num de 8 bytes",
+              "code": "section .data\n  num ___ 42",
+              "options": [
+                "dq",
+                "db",
+                "resb",
+                "mov"
+              ],
+              "answer": [
+                "dq"
+              ],
+              "explanation": "dq = define quadword (8 bytes); db define bytes."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué sección contiene las instrucciones del programa?",
+              "options": [
+                ".text",
+                ".data",
+                ".bss",
+                ".rodata"
+              ],
+              "answer": 0,
+              "explanation": "El código ejecutable va en .text."
+            },
+            {
+              "type": "output",
+              "prompt": "¿Qué valor queda en rax?",
+              "code": "section .data\n  num dq 10\nsection .text\n  mov rax, [num]\n  add rax, 1",
+              "options": [
+                "11",
+                "10",
+                "La dirección de num",
+                "1"
+              ],
+              "answer": 0,
+              "explanation": "[num] lee el valor guardado en esa dirección."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué significan los corchetes en mov rax, [num]?",
+              "options": [
+                "Leer el valor guardado en la dirección de num",
+                "Copiar la dirección de num",
+                "Crear un arreglo",
+                "Comentar la línea"
+              ],
+              "answer": 0,
+              "explanation": "Los corchetes indican acceso a memoria."
+            }
+          ]
+        },
+        {
+          "id": "asm-2-2",
+          "title": "La pila",
+          "exercises": [
+            {
+              "type": "output",
+              "prompt": "¿Qué valor queda en rbx?",
+              "code": "mov rax, 1\npush rax\nmov rax, 2\npop rbx",
+              "options": [
+                "1",
+                "2",
+                "0",
+                "3"
+              ],
+              "answer": 0,
+              "explanation": "push guardó el 1; pop lo saca en rbx."
+            },
+            {
+              "type": "fill",
+              "prompt": "Saca el último valor guardado",
+              "code": "push rax\npush rbx\n___ rax  ; rax recibe el valor de rbx",
+              "options": [
+                "pop",
+                "push",
+                "mov",
+                "ret"
+              ],
+              "answer": [
+                "pop"
+              ],
+              "explanation": "pop saca el último valor que entró en la pila."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Cómo funciona la pila?",
+              "options": [
+                "El último en entrar es el primero en salir (LIFO)",
+                "El primero en entrar es el primero en salir (FIFO)",
+                "Por orden alfabético",
+                "Al azar"
+              ],
+              "answer": 0,
+              "explanation": "Como una pila de platos: sacas el de arriba."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué registro apunta a la cima de la pila en x86-64?",
+              "options": [
+                "rsp",
+                "rip",
+                "rax",
+                "rbp"
+              ],
+              "answer": 0,
+              "explanation": "rsp = stack pointer."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para que rbx termine valiendo 10",
+              "lines": [
+                "mov rax, 5",
+                "push rax",
+                "pop rbx",
+                "add rbx, rbx"
+              ],
+              "explanation": "rbx recibe 5 desde la pila y luego se suma a sí mismo."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "intermedio",
+      "title": "Saltos y bucles",
+      "description": "Comparaciones, saltos condicionales y bucles.",
+      "lessons": [
+        {
+          "id": "asm-3-1",
+          "title": "Comparaciones",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Salta si rax es igual a 0",
+              "code": "cmp rax, 0\n___ es_cero",
+              "options": [
+                "je",
+                "jne",
+                "jmp",
+                "jg"
+              ],
+              "answer": [
+                "je"
+              ],
+              "explanation": "je = jump if equal."
+            },
+            {
+              "type": "output",
+              "prompt": "¿Qué valor queda en rbx?",
+              "code": "mov rax, 5\ncmp rax, 3\njg mayor\nmov rbx, 0\njmp fin\nmayor:\nmov rbx, 1\nfin:",
+              "options": [
+                "1",
+                "0",
+                "5",
+                "3"
+              ],
+              "answer": 0,
+              "explanation": "5 es mayor que 3, así que salta a \"mayor\"."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué hace jmp?",
+              "options": [
+                "Salta siempre a una etiqueta",
+                "Salta solo si son iguales",
+                "Compara dos valores",
+                "Termina el programa"
+              ],
+              "answer": 0,
+              "explanation": "jmp es un salto incondicional."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué instrucción compara dos valores sin guardar el resultado?",
+              "options": [
+                "cmp",
+                "mov",
+                "add",
+                "inc"
+              ],
+              "answer": 0,
+              "explanation": "cmp solo actualiza las banderas (flags) que usan los saltos."
+            },
+            {
+              "type": "output",
+              "prompt": "¿Qué valor queda en rbx?",
+              "code": "mov rax, 2\ncmp rax, 2\njne distinto\nmov rbx, 10\njmp fin\ndistinto:\nmov rbx, 20\nfin:",
+              "options": [
+                "10",
+                "20",
+                "2",
+                "0"
+              ],
+              "answer": 0,
+              "explanation": "Son iguales, así que jne no salta."
+            }
+          ]
+        },
+        {
+          "id": "asm-3-2",
+          "title": "Bucles",
+          "exercises": [
+            {
+              "type": "output",
+              "prompt": "¿Qué valor queda en rax?",
+              "code": "mov rcx, 3\nmov rax, 0\nbucle:\nadd rax, 2\ndec rcx\njnz bucle",
+              "options": [
+                "6",
+                "2",
+                "3",
+                "0"
+              ],
+              "answer": 0,
+              "explanation": "El bucle da 3 vueltas sumando 2 cada vez."
+            },
+            {
+              "type": "fill",
+              "prompt": "Repite mientras rcx no sea 0",
+              "code": "mov rcx, 5\nciclo:\n  ; ...\n  ___ ciclo",
+              "options": [
+                "loop",
+                "jmp",
+                "ret",
+                "call"
+              ],
+              "answer": [
+                "loop"
+              ],
+              "explanation": "loop resta 1 a rcx y salta si no llegó a 0."
+            },
+            {
+              "type": "output",
+              "prompt": "¿Qué valor queda en rax?",
+              "code": "mov rax, 1\nmov rcx, 4\ndoble:\nimul rax, 2\ndec rcx\njnz doble",
+              "options": [
+                "16",
+                "8",
+                "4",
+                "2"
+              ],
+              "answer": 0,
+              "explanation": "Se duplica 4 veces: 1 → 2 → 4 → 8 → 16."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué registro usa la instrucción loop como contador?",
+              "options": [
+                "rcx",
+                "rax",
+                "rbx",
+                "rsp"
+              ],
+              "answer": 0,
+              "explanation": "loop siempre trabaja con rcx."
+            },
+            {
+              "type": "order",
+              "prompt": "rax empieza en 0. Ordena para que termine valiendo 6 (3 + 2 + 1)",
+              "lines": [
+                "mov rcx, 3",
+                "suma:",
+                "add rax, rcx",
+                "loop suma"
+              ],
+              "explanation": "El contador se inicia antes de la etiqueta del bucle."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "avanzado",
+      "title": "Funciones y sistema",
+      "description": "call, ret, convenciones y llamadas al sistema.",
+      "lessons": [
+        {
+          "id": "asm-4-1",
+          "title": "call y ret",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Vuelve de la función",
+              "code": "call doble\n; ...\ndoble:\n  add rax, rax\n  ___",
+              "options": [
+                "ret",
+                "jmp",
+                "pop",
+                "end"
+              ],
+              "answer": [
+                "ret"
+              ],
+              "explanation": "ret regresa a la instrucción siguiente al call."
+            },
+            {
+              "type": "output",
+              "prompt": "¿Qué valor queda en rax?",
+              "code": "mov rax, 4\ncall doble\nadd rax, 1\njmp fin\ndoble:\n  add rax, rax\n  ret\nfin:",
+              "options": [
+                "9",
+                "8",
+                "5",
+                "4"
+              ],
+              "answer": 0,
+              "explanation": "doble deja rax en 8 y al volver se suma 1."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué guarda call en la pila antes de saltar?",
+              "options": [
+                "La dirección de retorno",
+                "El valor de rax",
+                "El nombre de la función",
+                "Nada"
+              ],
+              "answer": 0,
+              "explanation": "Así ret sabe a dónde volver."
+            },
+            {
+              "type": "choice",
+              "prompt": "En Linux x86-64 (System V), ¿en qué registro va el primer argumento entero?",
+              "options": [
+                "rdi",
+                "rax",
+                "rcx",
+                "rsp"
+              ],
+              "answer": 0,
+              "explanation": "El orden es rdi, rsi, rdx, rcx, r8 y r9."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿En qué registro se devuelve normalmente el resultado de una función?",
+              "options": [
+                "rax",
+                "rdi",
+                "rbx",
+                "rip"
+              ],
+              "answer": 0,
+              "explanation": "Por convención, el valor de retorno va en rax."
+            }
+          ]
+        },
+        {
+          "id": "asm-4-2",
+          "title": "Llamadas al sistema",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "En Linux x86-64, ¿qué instrucción hace una llamada al sistema?",
+              "options": [
+                "syscall",
+                "int 21h",
+                "call system",
+                "sys"
+              ],
+              "answer": 0,
+              "explanation": "int 21h era de MS-DOS; en Linux x86-64 se usa syscall."
+            },
+            {
+              "type": "fill",
+              "prompt": "Termina el programa (exit es la syscall 60)",
+              "code": "mov rax, ___\nmov rdi, 0\nsyscall",
+              "options": [
+                "60",
+                "1",
+                "0",
+                "21"
+              ],
+              "answer": [
+                "60"
+              ],
+              "explanation": "rax indica qué syscall ejecutar; rdi lleva el código de salida."
+            },
+            {
+              "type": "choice",
+              "prompt": "En la syscall write, ¿qué indica rdi = 1?",
+              "options": [
+                "Escribir en la salida estándar (pantalla)",
+                "Escribir un solo byte",
+                "Leer del teclado",
+                "Cerrar el programa"
+              ],
+              "answer": 0,
+              "explanation": "El descriptor 1 es stdout."
+            },
+            {
+              "type": "output",
+              "prompt": "¿Qué se ve en pantalla?",
+              "code": "section .data\n  msg db \"Hola\", 10\nsection .text\n  mov rax, 1\n  mov rdi, 1\n  mov rsi, msg\n  mov rdx, 4\n  syscall",
+              "options": [
+                "Hola",
+                "Hola10",
+                "msg",
+                "Nada"
+              ],
+              "answer": 0,
+              "explanation": "rdx = 4 bytes: solo se escribe \"Hola\", sin el salto de línea (10)."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué registro indica el número de la syscall?",
+              "options": [
+                "rax",
+                "rdi",
+                "rsi",
+                "rdx"
+              ],
+              "answer": 0,
+              "explanation": "Por ejemplo: 1 = write, 60 = exit."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "title": "Bits y optimización",
+      "description": "Operaciones de bits, desplazamientos y trucos de rendimiento.",
+      "lessons": [
+        {
+          "id": "asm-5-1",
+          "title": "Operaciones de bits",
+          "exercises": [
+            {
+              "type": "output",
+              "prompt": "¿Qué valor queda en rax?",
+              "code": "mov rax, 0b1100\nand rax, 0b1010",
+              "options": [
+                "8",
+                "14",
+                "6",
+                "12"
+              ],
+              "answer": 0,
+              "explanation": "1100 AND 1010 = 1000, que es 8."
+            },
+            {
+              "type": "output",
+              "prompt": "¿Qué valor queda en rax?",
+              "code": "mov rax, 0b1100\nor rax, 0b0011",
+              "options": [
+                "15",
+                "12",
+                "3",
+                "0"
+              ],
+              "answer": 0,
+              "explanation": "1100 OR 0011 = 1111, que es 15."
+            },
+            {
+              "type": "fill",
+              "prompt": "Pon rax en 0 de la forma más rápida",
+              "code": "___ rax, rax",
+              "options": [
+                "xor",
+                "and",
+                "or",
+                "add"
+              ],
+              "answer": [
+                "xor"
+              ],
+              "explanation": "Un valor XOR sí mismo siempre da 0."
+            },
+            {
+              "type": "output",
+              "prompt": "¿Qué valor queda en rax?",
+              "code": "mov rax, 3\nshl rax, 2",
+              "options": [
+                "12",
+                "6",
+                "5",
+                "1"
+              ],
+              "answer": 0,
+              "explanation": "Desplazar 2 bits a la izquierda multiplica por 4."
+            },
+            {
+              "type": "output",
+              "prompt": "¿Qué valor queda en rax?",
+              "code": "mov rax, 40\nshr rax, 3",
+              "options": [
+                "5",
+                "10",
+                "20",
+                "320"
+              ],
+              "answer": 0,
+              "explanation": "Desplazar 3 bits a la derecha divide entre 8."
+            }
+          ]
+        },
+        {
+          "id": "asm-5-2",
+          "title": "Optimización",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿Por qué se usa xor rax, rax en lugar de mov rax, 0?",
+              "options": [
+                "Es más corta y rápida",
+                "Es más legible",
+                "Guarda rax en la pila",
+                "Cambia el signo"
+              ],
+              "answer": 0,
+              "explanation": "Ocupa menos bytes y el CPU la reconoce como \"poner a cero\"."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué instrucción calcula direcciones (y sumas) sin modificar las banderas?",
+              "options": [
+                "lea",
+                "mov",
+                "add",
+                "cmp"
+              ],
+              "answer": 0,
+              "explanation": "lea = load effective address."
+            },
+            {
+              "type": "output",
+              "prompt": "¿Qué valor queda en rax?",
+              "code": "mov rbx, 5\nlea rax, [rbx + rbx*2]",
+              "options": [
+                "15",
+                "10",
+                "5",
+                "8"
+              ],
+              "answer": 0,
+              "explanation": "lea calcula 5 + 5 × 2 = 15 sin acceder a memoria."
+            },
+            {
+              "type": "fill",
+              "prompt": "Multiplica rax por 8 desplazando bits",
+              "code": "___ rax, 3",
+              "options": [
+                "shl",
+                "shr",
+                "ror",
+                "sar"
+              ],
+              "answer": [
+                "shl"
+              ],
+              "explanation": "2³ = 8: desplazar 3 bits a la izquierda."
+            },
+            {
+              "type": "output",
+              "prompt": "¿Qué valor queda en rax?",
+              "code": "mov rax, -8\nsar rax, 1",
+              "options": [
+                "-4",
+                "4",
+                "-16",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "sar es un desplazamiento aritmético: conserva el signo."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

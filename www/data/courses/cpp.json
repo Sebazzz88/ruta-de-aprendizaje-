@@ -1,0 +1,727 @@
+{
+  "id": "cpp",
+  "units": [
+    {
+      "level": "regular",
+      "title": "Primeros pasos",
+      "description": "Salida por consola y variables.",
+      "lessons": [
+        {
+          "id": "cpp-1-1",
+          "title": "Hola, mundo",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿Qué se usa para imprimir en C++?",
+              "options": [
+                "std::cout",
+                "console.log",
+                "echo",
+                "System.out"
+              ],
+              "answer": 0,
+              "explanation": "std::cout es la salida estándar de C++ (en <iostream>)."
+            },
+            {
+              "type": "fill",
+              "prompt": "Envía el texto a la salida",
+              "code": "#include <iostream>\n\nint main() {\n  std::cout ___ \"Hola\";\n  return 0;\n}",
+              "options": [
+                "<<",
+                ">>",
+                "->",
+                "+="
+              ],
+              "answer": [
+                "<<"
+              ],
+              "explanation": "<< envía datos hacia cout."
+            },
+            {
+              "type": "output",
+              "code": "std::cout << 3 + 4;",
+              "options": [
+                "7",
+                "3 + 4",
+                "34",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Primero se calcula 3 + 4 y luego se imprime."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué hace std::endl?",
+              "options": [
+                "Inserta un salto de línea",
+                "Termina el programa",
+                "Borra la pantalla",
+                "Cierra el archivo"
+              ],
+              "answer": 0,
+              "explanation": "std::endl agrega un salto de línea y vacía el búfer."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena el programa",
+              "lines": [
+                "#include <iostream>",
+                "int main() {",
+                "  std::cout << \"Hola\";",
+                "  return 0;",
+                "}"
+              ],
+              "explanation": "Primero el include, luego main con su cuerpo."
+            }
+          ]
+        },
+        {
+          "id": "cpp-1-2",
+          "title": "Variables",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿Qué palabra deja que el compilador deduzca el tipo?",
+              "options": [
+                "auto",
+                "var",
+                "let",
+                "dynamic"
+              ],
+              "answer": 0,
+              "explanation": "auto x = 5; hace que x sea int."
+            },
+            {
+              "type": "output",
+              "code": "int edad = 20;\nedad++;\nstd::cout << edad;",
+              "options": [
+                "21",
+                "20",
+                "Error",
+                "edad"
+              ],
+              "answer": 0,
+              "explanation": "++ suma 1."
+            },
+            {
+              "type": "fill",
+              "prompt": "Declara una cadena de texto",
+              "code": "#include <string>\nstd::___ nombre = \"Ana\";",
+              "options": [
+                "string",
+                "String",
+                "char",
+                "text"
+              ],
+              "answer": [
+                "string"
+              ],
+              "explanation": "std::string, en minúsculas, es la cadena de C++."
+            },
+            {
+              "type": "output",
+              "code": "int a = 7, b = 2;\nstd::cout << a / b;",
+              "options": [
+                "3",
+                "3.5",
+                "4",
+                "3.0"
+              ],
+              "answer": 0,
+              "explanation": "Entre enteros, / descarta los decimales."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para que imprima 35",
+              "lines": [
+                "int precio = 10;",
+                "int total = precio * 3;",
+                "total += 5;",
+                "std::cout << total;"
+              ],
+              "explanation": "10 × 3 = 30, más 5 = 35."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "medio",
+      "title": "Tipos y decisiones",
+      "description": "Entrada, tipos y condicionales.",
+      "lessons": [
+        {
+          "id": "cpp-2-1",
+          "title": "Tipos y entrada",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Lee un número del teclado",
+              "code": "int n;\nstd::___ >> n;",
+              "options": [
+                "cin",
+                "cout",
+                "in",
+                "read"
+              ],
+              "answer": [
+                "cin"
+              ],
+              "explanation": "std::cin >> variable lee desde el teclado."
+            },
+            {
+              "type": "output",
+              "code": "double d = 7 / 2;\nstd::cout << d;",
+              "options": [
+                "3",
+                "3.5",
+                "3.0",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "7 / 2 se calcula entre enteros (da 3). cout muestra 3 sin decimales."
+            },
+            {
+              "type": "output",
+              "code": "bool b = 5 > 3;\nstd::cout << b;",
+              "options": [
+                "1",
+                "true",
+                "0",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Por defecto, cout muestra los bool como 1 o 0."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué tipo es adecuado para verdadero o falso?",
+              "options": [
+                "bool",
+                "boolean",
+                "bit",
+                "logic"
+              ],
+              "answer": 0,
+              "explanation": "En C++ el tipo es bool."
+            },
+            {
+              "type": "output",
+              "code": "const int x = 5;\nstd::cout << x * 2;",
+              "options": [
+                "10",
+                "5",
+                "Error",
+                "25"
+              ],
+              "answer": 0,
+              "explanation": "const impide modificar x, pero se puede usar: 5 × 2 = 10."
+            }
+          ]
+        },
+        {
+          "id": "cpp-2-2",
+          "title": "Condicionales",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "int x = 7;\nif (x > 5) {\n  std::cout << \"grande\";\n} else {\n  std::cout << \"pequeño\";\n}",
+              "options": [
+                "grande",
+                "pequeño",
+                "Error",
+                "Nada"
+              ],
+              "answer": 0,
+              "explanation": "7 es mayor que 5."
+            },
+            {
+              "type": "fill",
+              "prompt": "Completa el operador ternario",
+              "code": "int n = 4;\nstd::cout << (n % 2 == 0 ___ \"par\" : \"impar\");",
+              "options": [
+                "?",
+                "!",
+                "&&",
+                "::"
+              ],
+              "answer": [
+                "?"
+              ],
+              "explanation": "condición ? valor_si : valor_no"
+            },
+            {
+              "type": "output",
+              "code": "int d = 3;\nswitch (d) {\n  case 1: std::cout << \"uno\"; break;\n  case 3: std::cout << \"tres\"; break;\n  default: std::cout << \"otro\";\n}",
+              "options": [
+                "tres",
+                "uno",
+                "otro",
+                "tresotro"
+              ],
+              "answer": 0,
+              "explanation": "Entra en case 3 y el break evita llegar al default."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué operador compara si dos valores son iguales?",
+              "options": [
+                "==",
+                "=",
+                "===",
+                "equals"
+              ],
+              "answer": 0,
+              "explanation": "= asigna; == compara."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena el programa",
+              "lines": [
+                "int nota = 8;",
+                "if (nota >= 6) {",
+                "  std::cout << \"Aprobado\";",
+                "} else {",
+                "  std::cout << \"Reprobado\";",
+                "}"
+              ],
+              "explanation": "else va justo después de cerrar el bloque del if."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "intermedio",
+      "title": "Bucles y funciones",
+      "description": "Bucles, vectores, funciones y referencias.",
+      "lessons": [
+        {
+          "id": "cpp-3-1",
+          "title": "Bucles y vectores",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "for (int i = 0; i < 3; i++) {\n  std::cout << i;\n}",
+              "options": [
+                "012",
+                "123",
+                "0123",
+                "3"
+              ],
+              "answer": 0,
+              "explanation": "Imprime 0, 1 y 2 sin espacios."
+            },
+            {
+              "type": "fill",
+              "prompt": "Recorre el vector",
+              "code": "std::vector<int> v = {1, 2, 3};\nfor (int n ___ v) {\n  std::cout << n;\n}",
+              "options": [
+                ":",
+                "in",
+                "of",
+                "->"
+              ],
+              "answer": [
+                ":"
+              ],
+              "explanation": "El for por rango usa dos puntos: for (int n : v)."
+            },
+            {
+              "type": "output",
+              "code": "std::vector<int> v = {4, 5};\nv.push_back(6);\nstd::cout << v.size();",
+              "options": [
+                "3",
+                "2",
+                "6",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "push_back agrega un elemento: ahora hay 3."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué cabecera necesitas para std::vector?",
+              "options": [
+                "<vector>",
+                "<list>",
+                "<array.h>",
+                "<stdvector>"
+              ],
+              "answer": 0,
+              "explanation": "#include <vector>"
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para imprimir 321",
+              "lines": [
+                "int n = 3;",
+                "while (n > 0) {",
+                "  std::cout << n;",
+                "  n--;",
+                "}"
+              ],
+              "explanation": "Se imprime y luego se resta 1."
+            }
+          ]
+        },
+        {
+          "id": "cpp-3-2",
+          "title": "Funciones y referencias",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Completa el tipo de retorno",
+              "code": "___ doble(int x) {\n  return x * 2;\n}",
+              "options": [
+                "int",
+                "void",
+                "def",
+                "fn"
+              ],
+              "answer": [
+                "int"
+              ],
+              "explanation": "La función devuelve un entero."
+            },
+            {
+              "type": "output",
+              "code": "void cambiar(int &x) {\n  x = 100;\n}\n// en main:\nint n = 5;\ncambiar(n);\nstd::cout << n;",
+              "options": [
+                "100",
+                "5",
+                "0",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "int &x es una referencia: la función modifica la variable original."
+            },
+            {
+              "type": "output",
+              "code": "int suma(int a, int b = 10) {\n  return a + b;\n}\n// en main:\nstd::cout << suma(5);",
+              "options": [
+                "15",
+                "5",
+                "Error",
+                "510"
+              ],
+              "answer": 0,
+              "explanation": "b usa su valor por defecto, 10."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Cómo se llama tener varias funciones con el mismo nombre y distintos parámetros?",
+              "options": [
+                "Sobrecarga",
+                "Herencia",
+                "Recursión",
+                "Plantillas"
+              ],
+              "answer": 0,
+              "explanation": "El compilador elige la versión según los argumentos."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena la función",
+              "lines": [
+                "int cuadrado(int x) {",
+                "  int r = x * x;",
+                "  return r;",
+                "}"
+              ],
+              "explanation": "Primero se calcula y luego se devuelve."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "avanzado",
+      "title": "STL y lambdas",
+      "description": "Contenedores, algoritmos, lambdas y punteros.",
+      "lessons": [
+        {
+          "id": "cpp-4-1",
+          "title": "Contenedores",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "std::map<std::string, int> edades;\nedades[\"ana\"] = 25;\nstd::cout << edades[\"ana\"];",
+              "options": [
+                "25",
+                "ana",
+                "0",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "std::map asocia claves con valores."
+            },
+            {
+              "type": "fill",
+              "prompt": "Ordena el vector",
+              "code": "std::vector<int> v = {3, 1, 2};\nstd::___(v.begin(), v.end());",
+              "options": [
+                "sort",
+                "order",
+                "arrange",
+                "sorted"
+              ],
+              "answer": [
+                "sort"
+              ],
+              "explanation": "std::sort está en <algorithm>."
+            },
+            {
+              "type": "output",
+              "code": "std::string s = \"hola\";\nstd::cout << s.length();",
+              "options": [
+                "4",
+                "5",
+                "3",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "length() devuelve la cantidad de caracteres."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué contenedor guarda elementos únicos y ordenados?",
+              "options": [
+                "std::set",
+                "std::vector",
+                "std::list",
+                "std::deque"
+              ],
+              "answer": 0,
+              "explanation": "std::set no permite duplicados y mantiene el orden."
+            },
+            {
+              "type": "output",
+              "code": "std::vector<int> v = {10, 20, 30};\nstd::cout << v.back();",
+              "options": [
+                "30",
+                "10",
+                "20",
+                "3"
+              ],
+              "answer": 0,
+              "explanation": "back() devuelve el último elemento."
+            }
+          ]
+        },
+        {
+          "id": "cpp-4-2",
+          "title": "Lambdas y punteros",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "auto doble = [](int x) { return x * 2; };\nstd::cout << doble(6);",
+              "options": [
+                "12",
+                "6",
+                "x * 2",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Una lambda es una función sin nombre."
+            },
+            {
+              "type": "output",
+              "code": "int x = 5;\nint *p = &x;\n*p = 9;\nstd::cout << x;",
+              "options": [
+                "9",
+                "5",
+                "Error",
+                "0"
+              ],
+              "answer": 0,
+              "explanation": "p apunta a x; *p = 9 modifica x."
+            },
+            {
+              "type": "fill",
+              "prompt": "Captura la variable a en la lambda",
+              "code": "int a = 3;\nauto suma = [___](int b) { return a + b; };",
+              "options": [
+                "a",
+                "b",
+                "n",
+                "*"
+              ],
+              "answer": [
+                "a"
+              ],
+              "explanation": "Entre corchetes van las variables externas que usa la lambda."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué libera la memoria reservada con new?",
+              "options": [
+                "delete",
+                "free",
+                "remove",
+                "release"
+              ],
+              "answer": 0,
+              "explanation": "new y delete van en pareja."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para que imprima 1",
+              "lines": [
+                "std::vector<int> v = {3, 1, 2};",
+                "std::sort(v.begin(), v.end());",
+                "std::cout << v[0];"
+              ],
+              "explanation": "Después de ordenar, el primer elemento es el menor."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "title": "Clases y plantillas",
+      "description": "Clases, herencia, plantillas y punteros inteligentes.",
+      "lessons": [
+        {
+          "id": "cpp-5-1",
+          "title": "Clases",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Haz público el atributo",
+              "code": "class Perro {\n___:\n  std::string nombre;\n};",
+              "options": [
+                "public",
+                "open",
+                "global",
+                "export"
+              ],
+              "answer": [
+                "public"
+              ],
+              "explanation": "En una class, todo es private si no indicas public."
+            },
+            {
+              "type": "output",
+              "code": "class Contador {\npublic:\n  int valor = 0;\n  void sumar() { valor++; }\n};\n// en main:\nContador c;\nc.sumar();\nc.sumar();\nstd::cout << c.valor;",
+              "options": [
+                "2",
+                "0",
+                "1",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Cada llamada a sumar() incrementa valor."
+            },
+            {
+              "type": "output",
+              "code": "struct Animal {\n  virtual std::string sonido() { return \"...\"; }\n};\nstruct Gato : Animal {\n  std::string sonido() override { return \"Miau\"; }\n};\n// en main:\nGato g;\nAnimal &a = g;\nstd::cout << a.sonido();",
+              "options": [
+                "Miau",
+                "...",
+                "Error",
+                "Nada"
+              ],
+              "answer": 0,
+              "explanation": "virtual permite que se ejecute el método de la clase real."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué método se ejecuta automáticamente cuando un objeto se destruye?",
+              "options": [
+                "El destructor",
+                "El constructor",
+                "main",
+                "delete"
+              ],
+              "answer": 0,
+              "explanation": "El destructor se escribe ~NombreClase()."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué palabra permite que una clase derivada sobrescriba un método en tiempo de ejecución?",
+              "options": [
+                "virtual",
+                "static",
+                "const",
+                "inline"
+              ],
+              "answer": 0,
+              "explanation": "Los métodos virtual se resuelven según el objeto real."
+            }
+          ]
+        },
+        {
+          "id": "cpp-5-2",
+          "title": "Plantillas y punteros inteligentes",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Declara la plantilla",
+              "code": "___ <typename T>\nT mayor(T a, T b) {\n  return a > b ? a : b;\n}",
+              "options": [
+                "template",
+                "generic",
+                "typename",
+                "auto"
+              ],
+              "answer": [
+                "template"
+              ],
+              "explanation": "template permite escribir funciones para cualquier tipo."
+            },
+            {
+              "type": "output",
+              "code": "template <typename T>\nT mayor(T a, T b) { return a > b ? a : b; }\n// en main:\nstd::cout << mayor(3, 8);",
+              "options": [
+                "8",
+                "3",
+                "Error",
+                "38"
+              ],
+              "answer": 0,
+              "explanation": "T se deduce como int y devuelve el mayor."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué puntero inteligente tiene un único dueño?",
+              "options": [
+                "std::unique_ptr",
+                "std::shared_ptr",
+                "std::weak_ptr",
+                "std::auto"
+              ],
+              "answer": 0,
+              "explanation": "unique_ptr no se puede copiar, solo mover."
+            },
+            {
+              "type": "output",
+              "code": "auto p = std::make_unique<int>(7);\nstd::cout << *p + 1;",
+              "options": [
+                "8",
+                "7",
+                "Error",
+                "71"
+              ],
+              "answer": 0,
+              "explanation": "*p vale 7, más 1 da 8. La memoria se libera sola."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para que imprima fallo",
+              "lines": [
+                "try {",
+                "  throw std::runtime_error(\"fallo\");",
+                "} catch (const std::exception &e) {",
+                "  std::cout << e.what();",
+                "}"
+              ],
+              "explanation": "what() devuelve el mensaje de la excepción."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

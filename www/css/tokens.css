@@ -1,0 +1,135 @@
+/* Tokens de diseño. Fuente: "DESIGN (1).md".
+   Los valores marcados como "añadido" no están en design.md y siguen su misma línea. */
+
+@font-face {
+  font-family: "Nunito";
+  src: url("../fonts/nunito-latin.woff2") format("woff2");
+  font-weight: 200 1000;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("../fonts/nunito-sans-latin.woff2") format("woff2");
+  font-weight: 200 1000;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Colores (design.md) */
+  --color-eager-green: #58cc02;
+  --color-storybook-green: #d7ffb8;
+  --color-spark-blue: #1cb0f6;
+  --color-fresh-leaf: #a5ed6e;
+  --color-night-ink: #000437;
+  --color-paper-white: #ffffff;
+  --color-charcoal: #4b4b4b;
+  --color-pencil-gray: #777777;
+  --color-faded-gray: #afafaf;
+
+  /* Colores añadidos */
+  --color-cardinal: #ff4b4b;   /* respuesta incorrecta y vidas */
+  --color-flame: #ff9600;      /* icono de racha */
+  --color-bee: #ffc800;        /* icono de XP */
+
+  /* Tipografía: feather -> Nunito, duolingo-sans -> Nunito Sans (sustitutos indicados en design.md) */
+  --font-feather: "Nunito", ui-rounded, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-duolingo-sans: "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-code: ui-monospace, "Cascadia Mono", Consolas, "Roboto Mono", "Droid Sans Mono", monospace; /* añadido */
+
+  --text-caption: 13px;
+  --leading-caption: 1.23;
+  --text-nav-label: 15px;
+  --leading-nav-label: 1.33;
+  --tracking-nav-label: 0.795px;
+  --text-body: 17px;
+  --leading-body: 1.18;
+  --text-subheading: 19px;
+  --leading-subheading: 1.4;
+  --text-heading-sm: 32px;
+  --leading-heading-sm: 1.2;
+  --text-heading: 48px;
+  --leading-heading: 1.2;
+  --tracking-heading: -0.96px;
+  --text-display: 64px;
+  --leading-display: 1.2;
+  --tracking-display: -1.28px;
+
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Espaciado */
+  --spacing-unit: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+  --spacing-48: 48px;
+  --spacing-64: 64px;
+  --spacing-80: 80px;
+  --spacing-96: 96px;
+  --element-gap: 12px;
+
+  /* Radios */
+  --radius-xl: 12px;
+  --radius-links: 12px;
+  --radius-buttons: 12px;
+  --radius-nav-items: 12px;
+
+  /* Tamaños de la app */
+  --tabbar-h: 72px;
+  --content-max: 600px;
+
+  /* Tema claro (semánticos) */
+  --bg: var(--color-paper-white);
+  --surface: var(--color-paper-white);
+  --text: var(--color-charcoal);
+  --text-muted: var(--color-pencil-gray);
+  --text-faint: var(--color-faded-gray);
+  --border: var(--color-faded-gray);
+  --border-soft: #dfdfdf;          /* añadido: faded gray al 40% sobre blanco */
+  --track: #dfdfdf;                /* añadido: fondo de barras de progreso */
+  --success-wash: var(--color-storybook-green);
+  --error-wash: #ffdfe0;           /* añadido: equivalente rojo de storybook green */
+  --on-color: var(--color-paper-white);
+  --overlay: rgba(0, 4, 55, 0.5);
+
+  color-scheme: light;
+}
+
+/* Tema oscuro (añadido): basado en Night Ink. Se aplica por sistema o forzado desde Ajustes. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: var(--color-night-ink);
+    --surface: #0a1150;
+    --text: var(--color-paper-white);
+    --text-muted: var(--color-faded-gray);
+    --text-faint: #6b7199;
+    --border: #39407f;
+    --border-soft: #232a6a;
+    --track: #232a6a;
+    --success-wash: #183c10;
+    --error-wash: #46102a;
+    --overlay: rgba(0, 0, 0, 0.6);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: var(--color-night-ink);
+  --surface: #0a1150;
+  --text: var(--color-paper-white);
+  --text-muted: var(--color-faded-gray);
+  --text-faint: #6b7199;
+  --border: #39407f;
+  --border-soft: #232a6a;
+  --track: #232a6a;
+  --success-wash: #183c10;
+  --error-wash: #46102a;
+  --overlay: rgba(0, 0, 0, 0.6);
+  color-scheme: dark;
+}

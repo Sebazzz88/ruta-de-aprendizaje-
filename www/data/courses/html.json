@@ -1,0 +1,752 @@
+{
+  "id": "html",
+  "units": [
+    {
+      "level": "regular",
+      "title": "Primeras etiquetas",
+      "description": "Estructura básica, textos, enlaces e imágenes.",
+      "lessons": [
+        {
+          "id": "html-1-1",
+          "title": "Etiquetas",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿Qué es HTML?",
+              "options": [
+                "Un lenguaje de marcado para estructurar páginas web",
+                "Un lenguaje de programación de servidores",
+                "Un programa de diseño gráfico",
+                "Un protocolo de internet"
+              ],
+              "answer": 0,
+              "explanation": "HTML describe la estructura del contenido; no tiene lógica como un lenguaje de programación."
+            },
+            {
+              "type": "fill",
+              "prompt": "Completa la etiqueta de apertura",
+              "code": "<___>Mi título principal</h1>",
+              "options": [
+                "h1",
+                "p",
+                "title",
+                "head"
+              ],
+              "answer": [
+                "h1"
+              ],
+              "explanation": "Cada etiqueta de apertura tiene su cierre con el mismo nombre: <h1> ... </h1>."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué etiqueta crea un párrafo?",
+              "options": [
+                "<p>",
+                "<para>",
+                "<text>",
+                "<br>"
+              ],
+              "answer": 0,
+              "explanation": "<p> es párrafo; <br> es un salto de línea."
+            },
+            {
+              "type": "output",
+              "prompt": "¿Qué se ve en el navegador?",
+              "code": "<p>Hola <strong>mundo</strong></p>",
+              "options": [
+                "Hola mundo, con \"mundo\" en negrita",
+                "Hola <strong>mundo</strong>",
+                "<p>Hola mundo</p>",
+                "Nada"
+              ],
+              "answer": 0,
+              "explanation": "El navegador no muestra las etiquetas: las interpreta. <strong> marca texto importante (en negrita)."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena la estructura mínima",
+              "lines": [
+                "<!DOCTYPE html>",
+                "<html>",
+                "<body>",
+                "<h1>Hola</h1>",
+                "</body>",
+                "</html>"
+              ],
+              "explanation": "Las etiquetas se cierran en orden inverso al que se abrieron."
+            }
+          ]
+        },
+        {
+          "id": "html-1-2",
+          "title": "Enlaces e imágenes",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Indica el destino del enlace",
+              "code": "<a ___=\"https://ejemplo.com\">Visitar</a>",
+              "options": [
+                "href",
+                "src",
+                "link",
+                "url"
+              ],
+              "answer": [
+                "href"
+              ],
+              "explanation": "href indica a dónde lleva el enlace."
+            },
+            {
+              "type": "fill",
+              "prompt": "Indica el archivo de la imagen",
+              "code": "<img ___=\"foto.png\" alt=\"Mi foto\">",
+              "options": [
+                "src",
+                "href",
+                "img",
+                "file"
+              ],
+              "answer": [
+                "src"
+              ],
+              "explanation": "src (source) indica qué archivo cargar."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Para qué sirve el atributo alt de una imagen?",
+              "options": [
+                "Describir la imagen si no carga o para lectores de pantalla",
+                "Cambiar su tamaño",
+                "Ponerle un enlace",
+                "Agregarle un borde"
+              ],
+              "answer": 0,
+              "explanation": "alt es clave para la accesibilidad."
+            },
+            {
+              "type": "output",
+              "prompt": "¿Qué se ve en el navegador?",
+              "code": "<a href=\"#\">Inicio</a>",
+              "options": [
+                "Un enlace con el texto Inicio",
+                "Un botón gris",
+                "El texto #",
+                "Nada"
+              ],
+              "answer": 0,
+              "explanation": "Se muestra el texto entre las etiquetas como enlace."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué atributo abre un enlace en una pestaña nueva?",
+              "options": [
+                "target=\"_blank\"",
+                "new=\"tab\"",
+                "open=\"new\"",
+                "href=\"_new\""
+              ],
+              "answer": 0,
+              "explanation": "target=\"_blank\" abre el destino en otra pestaña."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "medio",
+      "title": "Listas, tablas y formularios",
+      "description": "Organiza información y pide datos.",
+      "lessons": [
+        {
+          "id": "html-2-1",
+          "title": "Listas y tablas",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Crea una lista con viñetas",
+              "code": "<___>\n  <li>Pan</li>\n  <li>Leche</li>\n</ul>",
+              "options": [
+                "ul",
+                "ol",
+                "li",
+                "list"
+              ],
+              "answer": [
+                "ul"
+              ],
+              "explanation": "ul = lista sin orden (viñetas); ol = lista numerada."
+            },
+            {
+              "type": "output",
+              "prompt": "¿Qué se ve en el navegador?",
+              "code": "<ol>\n  <li>Uno</li>\n  <li>Dos</li>\n</ol>",
+              "options": [
+                "1. Uno\n2. Dos",
+                "• Uno\n• Dos",
+                "Uno Dos",
+                "Nada"
+              ],
+              "answer": 0,
+              "explanation": "<ol> numera los elementos."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué etiqueta crea una fila de tabla?",
+              "options": [
+                "<tr>",
+                "<td>",
+                "<th>",
+                "<row>"
+              ],
+              "answer": 0,
+              "explanation": "tr = table row; td = celda."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena la tabla",
+              "lines": [
+                "<table>",
+                "<tr>",
+                "<td>Ana</td>",
+                "</tr>",
+                "</table>"
+              ],
+              "explanation": "Tabla > fila > celda."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué etiqueta se usa para una celda de encabezado?",
+              "options": [
+                "<th>",
+                "<td>",
+                "<thead>",
+                "<head>"
+              ],
+              "answer": 0,
+              "explanation": "th = table header."
+            }
+          ]
+        },
+        {
+          "id": "html-2-2",
+          "title": "Formularios",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Pide un correo electrónico",
+              "code": "<input ___=\"email\" placeholder=\"Tu correo\">",
+              "options": [
+                "type",
+                "kind",
+                "input",
+                "mode"
+              ],
+              "answer": [
+                "type"
+              ],
+              "explanation": "type define el tipo de campo: text, email, password..."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué etiqueta agrupa los campos que se envían juntos?",
+              "options": [
+                "<form>",
+                "<div>",
+                "<section>",
+                "<input>"
+              ],
+              "answer": 0,
+              "explanation": "<form> envía los datos de sus campos."
+            },
+            {
+              "type": "output",
+              "prompt": "¿Qué se ve en el navegador?",
+              "code": "<label><input type=\"checkbox\"> Acepto</label>",
+              "options": [
+                "Una casilla para marcar con el texto Acepto",
+                "Un botón Acepto",
+                "Un campo de texto",
+                "Nada"
+              ],
+              "answer": 0,
+              "explanation": "type=\"checkbox\" crea una casilla de verificación."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Para qué sirve <label>?",
+              "options": [
+                "Asociar un texto a un campo del formulario",
+                "Crear un título",
+                "Agregar una imagen",
+                "Enviar el formulario"
+              ],
+              "answer": 0,
+              "explanation": "Al tocar el label se activa su campo."
+            },
+            {
+              "type": "fill",
+              "prompt": "Haz que el botón envíe el formulario",
+              "code": "<button ___=\"submit\">Enviar</button>",
+              "options": [
+                "type",
+                "value",
+                "action",
+                "method"
+              ],
+              "answer": [
+                "type"
+              ],
+              "explanation": "type=\"submit\" envía el formulario."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "intermedio",
+      "title": "Semántica y estilos",
+      "description": "Etiquetas con significado y conexión con CSS y JS.",
+      "lessons": [
+        {
+          "id": "html-3-1",
+          "title": "Estructura semántica",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿Qué etiqueta representa la navegación principal?",
+              "options": [
+                "<nav>",
+                "<menu>",
+                "<links>",
+                "<header>"
+              ],
+              "answer": 0,
+              "explanation": "<nav> agrupa los enlaces de navegación."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Dónde va el contenido principal y único de la página?",
+              "options": [
+                "<main>",
+                "<aside>",
+                "<footer>",
+                "<head>"
+              ],
+              "answer": 0,
+              "explanation": "Solo debe haber un <main> visible por página."
+            },
+            {
+              "type": "fill",
+              "prompt": "Marca un contenido independiente",
+              "code": "<___>\n  <h2>Noticia</h2>\n  <p>Texto de la noticia...</p>\n</article>",
+              "options": [
+                "article",
+                "section",
+                "div",
+                "news"
+              ],
+              "answer": [
+                "article"
+              ],
+              "explanation": "<article> es un contenido que tiene sentido por sí solo."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena la página",
+              "lines": [
+                "<body>",
+                "<header>Logo</header>",
+                "<main>Contenido</main>",
+                "<footer>Contacto</footer>",
+                "</body>"
+              ],
+              "explanation": "Cabecera, contenido principal y pie."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué va dentro de <head>?",
+              "options": [
+                "Metadatos como <title> y <meta>",
+                "El contenido visible",
+                "Los párrafos",
+                "Los botones"
+              ],
+              "answer": 0,
+              "explanation": "<head> describe la página; <body> tiene lo visible."
+            }
+          ]
+        },
+        {
+          "id": "html-3-2",
+          "title": "Atributos y estilos",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Asigna la clase aviso",
+              "code": "<p ___=\"aviso\">Cuidado</p>",
+              "options": [
+                "class",
+                "style",
+                "name",
+                "type"
+              ],
+              "answer": [
+                "class"
+              ],
+              "explanation": "class permite aplicar estilos de CSS a varios elementos."
+            },
+            {
+              "type": "output",
+              "prompt": "¿Qué se ve en el navegador?",
+              "code": "<p style=\"color: red\">Alerta</p>",
+              "options": [
+                "El texto Alerta en rojo",
+                "El texto color: red",
+                "Un cuadro rojo vacío",
+                "Nada"
+              ],
+              "answer": 0,
+              "explanation": "style aplica CSS directamente al elemento."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué diferencia hay entre id y class?",
+              "options": [
+                "id es único en la página; class se puede repetir",
+                "Son iguales",
+                "class es único; id se repite",
+                "id solo sirve en imágenes"
+              ],
+              "answer": 0,
+              "explanation": "Usa id para un elemento concreto y class para grupos."
+            },
+            {
+              "type": "fill",
+              "prompt": "Enlaza la hoja de estilos",
+              "code": "<link rel=\"stylesheet\" ___=\"estilos.css\">",
+              "options": [
+                "href",
+                "src",
+                "file",
+                "link"
+              ],
+              "answer": [
+                "href"
+              ],
+              "explanation": "<link> usa href, igual que los enlaces."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué etiqueta carga un archivo JavaScript?",
+              "options": [
+                "<script>",
+                "<js>",
+                "<link>",
+                "<code>"
+              ],
+              "answer": 0,
+              "explanation": "<script src=\"app.js\"></script>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "avanzado",
+      "title": "Multimedia y accesibilidad",
+      "description": "Video, audio, contenido interactivo y accesibilidad.",
+      "lessons": [
+        {
+          "id": "html-4-1",
+          "title": "Multimedia",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Inserta el video",
+              "code": "<___ src=\"video.mp4\" controls></video>",
+              "options": [
+                "video",
+                "media",
+                "movie",
+                "play"
+              ],
+              "answer": [
+                "video"
+              ],
+              "explanation": "<video> reproduce video sin plugins."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué hace el atributo controls?",
+              "options": [
+                "Muestra los botones de reproducir, pausar y volumen",
+                "Reproduce automáticamente",
+                "Oculta el video",
+                "Repite el video"
+              ],
+              "answer": 0,
+              "explanation": "Sin controls, el usuario no puede manejar el reproductor."
+            },
+            {
+              "type": "fill",
+              "prompt": "Muestra los controles del audio",
+              "code": "<audio src=\"musica.mp3\" ___></audio>",
+              "options": [
+                "controls",
+                "show",
+                "player",
+                "play"
+              ],
+              "answer": [
+                "controls"
+              ],
+              "explanation": "Es el mismo atributo que en <video>."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué etiqueta inserta otra página web dentro de la tuya?",
+              "options": [
+                "<iframe>",
+                "<embed-page>",
+                "<frame-web>",
+                "<include>"
+              ],
+              "answer": 0,
+              "explanation": "<iframe src=\"...\"> muestra otra página en un recuadro."
+            },
+            {
+              "type": "output",
+              "prompt": "¿Qué se ve en el navegador?",
+              "code": "<details>\n  <summary>Ver más</summary>\n  Texto oculto\n</details>",
+              "options": [
+                "\"Ver más\", que al tocarlo muestra \"Texto oculto\"",
+                "Solo \"Texto oculto\"",
+                "Los dos textos siempre visibles",
+                "Nada"
+              ],
+              "answer": 0,
+              "explanation": "<details> crea un bloque desplegable sin JavaScript."
+            }
+          ]
+        },
+        {
+          "id": "html-4-2",
+          "title": "Accesibilidad",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿Qué atributo da un nombre accesible a un botón que solo tiene un icono?",
+              "options": [
+                "aria-label",
+                "title-name",
+                "alt",
+                "label"
+              ],
+              "answer": 0,
+              "explanation": "Los lectores de pantalla leen el aria-label."
+            },
+            {
+              "type": "fill",
+              "prompt": "Indica que la página está en español",
+              "code": "<html ___=\"es\">",
+              "options": [
+                "lang",
+                "language",
+                "idioma",
+                "locale"
+              ],
+              "answer": [
+                "lang"
+              ],
+              "explanation": "lang ayuda a lectores de pantalla y traductores."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Por qué usar <button> en lugar de un <div> clicable?",
+              "options": [
+                "Funciona con teclado y lectores de pantalla",
+                "Es más colorido",
+                "Siempre carga más rápido",
+                "No hay diferencia"
+              ],
+              "answer": 0,
+              "explanation": "Los elementos nativos ya traen accesibilidad."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué orden de títulos es correcto?",
+              "options": [
+                "h1, luego h2, luego h3",
+                "h3 y luego h1",
+                "Solo h6",
+                "Cualquier orden"
+              ],
+              "answer": 0,
+              "explanation": "Los títulos forman una jerarquía sin saltar niveles."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena el formulario accesible",
+              "lines": [
+                "<form>",
+                "<label for=\"nombre\">Nombre</label>",
+                "<input id=\"nombre\" type=\"text\">",
+                "<button type=\"submit\">Enviar</button>",
+                "</form>"
+              ],
+              "explanation": "for del label coincide con el id del input."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "title": "Rendimiento y HTML moderno",
+      "description": "Metadatos, carga eficiente y elementos modernos.",
+      "lessons": [
+        {
+          "id": "html-5-1",
+          "title": "Meta y rendimiento",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Ajusta la página al ancho del teléfono",
+              "code": "<meta name=\"viewport\" content=\"width=device-width, ___=1\">",
+              "options": [
+                "initial-scale",
+                "zoom",
+                "scale",
+                "size"
+              ],
+              "answer": [
+                "initial-scale"
+              ],
+              "explanation": "Sin esta etiqueta, el móvil muestra la página reducida."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué hace el atributo defer en <script>?",
+              "options": [
+                "Ejecuta el script después de leer todo el HTML",
+                "Bloquea la página",
+                "Borra el script",
+                "Lo ejecuta dos veces"
+              ],
+              "answer": 0,
+              "explanation": "defer descarga en paralelo y ejecuta al final, en orden."
+            },
+            {
+              "type": "fill",
+              "prompt": "Carga la imagen solo cuando se acerque a la pantalla",
+              "code": "<img src=\"foto.jpg\" alt=\"Paisaje\" loading=\"___\">",
+              "options": [
+                "lazy",
+                "late",
+                "slow",
+                "defer"
+              ],
+              "answer": [
+                "lazy"
+              ],
+              "explanation": "loading=\"lazy\" retrasa la carga de imágenes que no se ven."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué etiqueta meta define la codificación de caracteres?",
+              "options": [
+                "<meta charset=\"utf-8\">",
+                "<meta encoding=\"utf-8\">",
+                "<meta type=\"utf-8\">",
+                "<meta lang=\"utf-8\">"
+              ],
+              "answer": 0,
+              "explanation": "UTF-8 permite tildes, eñes y emojis."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena el head (el charset va primero)",
+              "lines": [
+                "<head>",
+                "<meta charset=\"utf-8\">",
+                "<title>Mi sitio</title>",
+                "</head>"
+              ],
+              "explanation": "El charset debe ir al principio del head."
+            }
+          ]
+        },
+        {
+          "id": "html-5-2",
+          "title": "Datos y elementos modernos",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Guarda un dato personalizado",
+              "code": "<div ___-usuario=\"42\">Ana</div>",
+              "options": [
+                "data",
+                "info",
+                "attr",
+                "meta"
+              ],
+              "answer": [
+                "data"
+              ],
+              "explanation": "Los atributos data-* guardan datos que luego lee JavaScript."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué hace la etiqueta <template>?",
+              "options": [
+                "Guarda HTML que no se muestra hasta usarlo con JavaScript",
+                "Muestra una plantilla de diseño",
+                "Carga CSS",
+                "Crea una tabla"
+              ],
+              "answer": 0,
+              "explanation": "Su contenido no se dibuja hasta que lo clonas."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué etiqueta permite dibujar gráficos con JavaScript?",
+              "options": [
+                "<canvas>",
+                "<draw>",
+                "<paint>",
+                "<graphic>"
+              ],
+              "answer": 0,
+              "explanation": "<canvas> es un lienzo para dibujar con JavaScript."
+            },
+            {
+              "type": "output",
+              "prompt": "¿Qué se ve en el navegador?",
+              "code": "<p>5 &lt; 10</p>",
+              "options": [
+                "5 < 10",
+                "5 &lt; 10",
+                "510",
+                "Nada"
+              ],
+              "answer": 0,
+              "explanation": "&lt; es la entidad del símbolo <."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué elemento muestra un cuadro de diálogo nativo?",
+              "options": [
+                "<dialog>",
+                "<modal>",
+                "<popup>",
+                "<alert>"
+              ],
+              "answer": 0,
+              "explanation": "<dialog> se abre con showModal()."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

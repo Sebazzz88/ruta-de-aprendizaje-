@@ -1,0 +1,8 @@
+{
+  "appId": "com.sebazzz88.rutadeaprendizaje",
+  "appName": "Codi",
+  "webDir": "www",
+  "android": {
+    "backgroundColor": "#ffffff"
+  }
+}

@@ -1,0 +1,725 @@
+{
+  "id": "ruby",
+  "units": [
+    {
+      "level": "regular",
+      "title": "Primeros pasos",
+      "description": "Muestra mensajes y guarda datos.",
+      "lessons": [
+        {
+          "id": "rb-1-1",
+          "title": "Hola, mundo",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿Qué método imprime una línea en Ruby?",
+              "options": [
+                "puts",
+                "echo",
+                "console.log",
+                "System.out"
+              ],
+              "answer": 0,
+              "explanation": "puts imprime y agrega un salto de línea."
+            },
+            {
+              "type": "fill",
+              "prompt": "Completa para mostrar Hola",
+              "code": "___ \"Hola\"",
+              "options": [
+                "puts",
+                "echo",
+                "say",
+                "log"
+              ],
+              "answer": [
+                "puts"
+              ],
+              "explanation": "En Ruby los paréntesis son opcionales: puts \"Hola\"."
+            },
+            {
+              "type": "output",
+              "code": "puts \"Hola, \" + \"Ruby\"",
+              "options": [
+                "Hola, Ruby",
+                "Hola,Ruby",
+                "Error",
+                "\"Hola, Ruby\""
+              ],
+              "answer": 0,
+              "explanation": "+ concatena los textos."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Con qué símbolo empieza un comentario en Ruby?",
+              "options": [
+                "#",
+                "//",
+                "--",
+                "/*"
+              ],
+              "answer": 0,
+              "explanation": "# inicia un comentario de una línea."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para imprimir Uno, Dos y Tres",
+              "lines": [
+                "puts \"Uno\"",
+                "puts \"Dos\"",
+                "puts \"Tres\""
+              ],
+              "explanation": "Las líneas se ejecutan en orden."
+            }
+          ]
+        },
+        {
+          "id": "rb-1-2",
+          "title": "Variables",
+          "exercises": [
+            {
+              "type": "choice",
+              "prompt": "¿Cómo guardas 5 en una variable x?",
+              "options": [
+                "x = 5",
+                "var x = 5",
+                "int x = 5",
+                "x := 5"
+              ],
+              "answer": 0,
+              "explanation": "En Ruby basta con nombre = valor."
+            },
+            {
+              "type": "output",
+              "code": "edad = 20\nedad += 1\nputs edad",
+              "options": [
+                "21",
+                "20",
+                "Error",
+                "edad"
+              ],
+              "answer": 0,
+              "explanation": "+= 1 suma uno."
+            },
+            {
+              "type": "fill",
+              "prompt": "Inserta la variable en el texto",
+              "code": "nombre = \"Ana\"\nputs \"Hola #{___}\"",
+              "options": [
+                "nombre",
+                "$nombre",
+                "%nombre",
+                "&nombre"
+              ],
+              "answer": [
+                "nombre"
+              ],
+              "explanation": "#{...} dentro de comillas dobles inserta el valor de la variable."
+            },
+            {
+              "type": "output",
+              "code": "a = 7\nb = 2\nputs a / b",
+              "options": [
+                "3",
+                "3.5",
+                "4",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Entre enteros, / descarta los decimales."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para que imprima 35",
+              "lines": [
+                "precio = 10",
+                "total = precio * 3",
+                "total += 5",
+                "puts total"
+              ],
+              "explanation": "10 × 3 = 30, más 5 = 35."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "medio",
+      "title": "Tipos y decisiones",
+      "description": "Tipos, conversiones y condicionales.",
+      "lessons": [
+        {
+          "id": "rb-2-1",
+          "title": "Tipos",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "puts 7.class",
+              "options": [
+                "Integer",
+                "Fixnum",
+                "Number",
+                "int"
+              ],
+              "answer": 0,
+              "explanation": "En Ruby todo es un objeto; 7 es de la clase Integer."
+            },
+            {
+              "type": "output",
+              "code": "puts \"5\".to_i + 2",
+              "options": [
+                "7",
+                "52",
+                "Error",
+                "5"
+              ],
+              "answer": 0,
+              "explanation": "to_i convierte el texto en entero."
+            },
+            {
+              "type": "fill",
+              "prompt": "Convierte el texto en entero para que imprima 43",
+              "code": "n = \"42\".___\nputs n + 1",
+              "options": [
+                "to_i",
+                "to_s",
+                "int",
+                "parse"
+              ],
+              "answer": [
+                "to_i"
+              ],
+              "explanation": "to_i = to integer; to_s convierte a texto."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué valor representa \"nada\" en Ruby?",
+              "options": [
+                "nil",
+                "null",
+                "None",
+                "undefined"
+              ],
+              "answer": 0,
+              "explanation": "nil es el \"nada\" de Ruby."
+            },
+            {
+              "type": "output",
+              "code": "puts 2 ** 3",
+              "options": [
+                "8",
+                "6",
+                "9",
+                "23"
+              ],
+              "answer": 0,
+              "explanation": "** es potencia."
+            }
+          ]
+        },
+        {
+          "id": "rb-2-2",
+          "title": "Condicionales",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "x = 7\nif x > 5\n  puts \"grande\"\nelse\n  puts \"pequeño\"\nend",
+              "options": [
+                "grande",
+                "pequeño",
+                "Error",
+                "Nada"
+              ],
+              "answer": 0,
+              "explanation": "7 es mayor que 5."
+            },
+            {
+              "type": "fill",
+              "prompt": "Usa la condición al final de la línea",
+              "code": "edad = 18\nputs \"Adulto\" ___ edad >= 18",
+              "options": [
+                "if",
+                "when",
+                "then",
+                "for"
+              ],
+              "answer": [
+                "if"
+              ],
+              "explanation": "Ruby permite escribir el if después de la instrucción."
+            },
+            {
+              "type": "output",
+              "code": "n = 3\nputs \"no es cero\" unless n == 0",
+              "options": [
+                "no es cero",
+                "Nada",
+                "Error",
+                "false"
+              ],
+              "answer": 0,
+              "explanation": "unless es \"si no\": se ejecuta cuando la condición es falsa."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Con qué palabra se cierra un bloque if en Ruby?",
+              "options": [
+                "end",
+                "}",
+                "fi",
+                "endif"
+              ],
+              "answer": 0,
+              "explanation": "if, while, def y class se cierran con end."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena el programa",
+              "lines": [
+                "nota = 8",
+                "if nota >= 6",
+                "  puts \"Aprobado\"",
+                "else",
+                "  puts \"Reprobado\"",
+                "end"
+              ],
+              "explanation": "El bloque termina con end."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "intermedio",
+      "title": "Bucles y métodos",
+      "description": "Iteradores, rangos y métodos.",
+      "lessons": [
+        {
+          "id": "rb-3-1",
+          "title": "Bucles",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "3.times { |i| puts i }",
+              "options": [
+                "0\n1\n2",
+                "1\n2\n3",
+                "0\n1\n2\n3",
+                "3"
+              ],
+              "answer": 0,
+              "explanation": "times repite el bloque, con i desde 0."
+            },
+            {
+              "type": "fill",
+              "prompt": "Recorre cada elemento",
+              "code": "[1, 2, 3].___ do |n|\n  puts n\nend",
+              "options": [
+                "each",
+                "for",
+                "in",
+                "times"
+              ],
+              "answer": [
+                "each"
+              ],
+              "explanation": "each recorre cada elemento de la colección."
+            },
+            {
+              "type": "output",
+              "code": "total = 0\n(1..4).each { |n| total += n }\nputs total",
+              "options": [
+                "10",
+                "4",
+                "15",
+                "9"
+              ],
+              "answer": 0,
+              "explanation": "El rango 1..4 incluye el 4: 1 + 2 + 3 + 4 = 10."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué números incluye el rango 1...4 (tres puntos)?",
+              "options": [
+                "1, 2 y 3",
+                "1, 2, 3 y 4",
+                "2 y 3",
+                "Solo el 4"
+              ],
+              "answer": 0,
+              "explanation": "Con tres puntos se excluye el último valor."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para imprimir 3, 2 y 1",
+              "lines": [
+                "n = 3",
+                "while n > 0",
+                "  puts n",
+                "  n -= 1",
+                "end"
+              ],
+              "explanation": "Se imprime y luego se resta 1."
+            }
+          ]
+        },
+        {
+          "id": "rb-3-2",
+          "title": "Métodos",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Define el método",
+              "code": "___ doble(x)\n  x * 2\nend",
+              "options": [
+                "def",
+                "function",
+                "fn",
+                "method"
+              ],
+              "answer": [
+                "def"
+              ],
+              "explanation": "Los métodos se definen con def ... end."
+            },
+            {
+              "type": "output",
+              "code": "def doble(x)\n  x * 2\nend\nputs doble(4)",
+              "options": [
+                "8",
+                "4",
+                "nil",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "Ruby devuelve automáticamente la última expresión."
+            },
+            {
+              "type": "output",
+              "code": "def saludo(nombre = \"amigo\")\n  \"Hola #{nombre}\"\nend\nputs saludo",
+              "options": [
+                "Hola amigo",
+                "Hola ",
+                "Error",
+                "Hola nombre"
+              ],
+              "answer": 0,
+              "explanation": "Sin argumento se usa el valor por defecto."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué devuelve un método de Ruby si no usas return?",
+              "options": [
+                "El valor de la última expresión",
+                "Siempre nil",
+                "0",
+                "Un error"
+              ],
+              "answer": 0,
+              "explanation": "El return implícito es muy común en Ruby."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena el método y su uso",
+              "lines": [
+                "def area(b, h)",
+                "  b * h",
+                "end",
+                "puts area(3, 4)"
+              ],
+              "explanation": "Imprime 12."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "avanzado",
+      "title": "Colecciones",
+      "description": "Arreglos, hashes, bloques y texto.",
+      "lessons": [
+        {
+          "id": "rb-4-1",
+          "title": "Arreglos y hashes",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "nums = [10, 20, 30]\nputs nums.last",
+              "options": [
+                "30",
+                "10",
+                "3",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "last devuelve el último elemento."
+            },
+            {
+              "type": "fill",
+              "prompt": "Agrega \"uva\" al arreglo",
+              "code": "frutas = [\"pera\"]\nfrutas ___ \"uva\"\nputs frutas.size",
+              "options": [
+                "<<",
+                "+=",
+                "=>",
+                "::"
+              ],
+              "answer": [
+                "<<"
+              ],
+              "explanation": "<< agrega un elemento al final. Imprime 2."
+            },
+            {
+              "type": "output",
+              "code": "edades = { \"ana\" => 25, \"luis\" => 30 }\nputs edades[\"luis\"]",
+              "options": [
+                "30",
+                "25",
+                "luis",
+                "nil"
+              ],
+              "answer": 0,
+              "explanation": "Un hash se consulta con su clave."
+            },
+            {
+              "type": "output",
+              "code": "p [1, 2, 3].map { |n| n * 2 }",
+              "options": [
+                "[2, 4, 6]",
+                "[1, 2, 3]",
+                "2\n4\n6",
+                "[2, 3, 4]"
+              ],
+              "answer": 0,
+              "explanation": "map transforma cada elemento; p muestra el arreglo tal cual."
+            },
+            {
+              "type": "output",
+              "code": "p [1, 2, 3, 4].select { |n| n.even? }",
+              "options": [
+                "[2, 4]",
+                "[1, 3]",
+                "[1, 2, 3, 4]",
+                "2"
+              ],
+              "answer": 0,
+              "explanation": "select se queda con los que cumplen la condición."
+            }
+          ]
+        },
+        {
+          "id": "rb-4-2",
+          "title": "Texto y símbolos",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "puts \"ruby\".upcase",
+              "options": [
+                "RUBY",
+                "Ruby",
+                "ruby",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "upcase convierte a mayúsculas."
+            },
+            {
+              "type": "output",
+              "code": "puts \"hola\".reverse",
+              "options": [
+                "aloh",
+                "hola",
+                "HOLA",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "reverse invierte el texto."
+            },
+            {
+              "type": "fill",
+              "prompt": "Divide el texto por comas",
+              "code": "p \"a,b,c\".___(\",\")",
+              "options": [
+                "split",
+                "join",
+                "cut",
+                "chars"
+              ],
+              "answer": [
+                "split"
+              ],
+              "explanation": "split(\",\") devuelve [\"a\", \"b\", \"c\"]."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué es :nombre en Ruby?",
+              "options": [
+                "Un símbolo",
+                "Una cadena",
+                "Una variable global",
+                "Un comentario"
+              ],
+              "answer": 0,
+              "explanation": "Los símbolos son identificadores inmutables, muy usados como claves."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para que imprima Hola mundo",
+              "lines": [
+                "palabras = [\"hola\", \"mundo\"]",
+                "frase = palabras.join(\" \")",
+                "puts frase.capitalize"
+              ],
+              "explanation": "join une con espacios y capitalize pone mayúscula la primera letra."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "title": "Clases y bloques",
+      "description": "Clases, herencia, bloques y errores.",
+      "lessons": [
+        {
+          "id": "rb-5-1",
+          "title": "Clases",
+          "exercises": [
+            {
+              "type": "fill",
+              "prompt": "Completa el constructor",
+              "code": "class Perro\n  def ___(nombre)\n    @nombre = nombre\n  end\nend",
+              "options": [
+                "initialize",
+                "init",
+                "new",
+                "constructor"
+              ],
+              "answer": [
+                "initialize"
+              ],
+              "explanation": "Perro.new llama al método initialize."
+            },
+            {
+              "type": "output",
+              "code": "class Contador\n  attr_reader :valor\n  def initialize\n    @valor = 0\n  end\n  def sumar\n    @valor += 1\n  end\nend\nc = Contador.new\nc.sumar\nc.sumar\nputs c.valor",
+              "options": [
+                "2",
+                "0",
+                "1",
+                "nil"
+              ],
+              "answer": 0,
+              "explanation": "Cada sumar incrementa @valor."
+            },
+            {
+              "type": "output",
+              "code": "class Animal\n  def sonido\n    \"...\"\n  end\nend\nclass Gato < Animal\n  def sonido\n    \"Miau\"\n  end\nend\nputs Gato.new.sonido",
+              "options": [
+                "Miau",
+                "...",
+                "Error",
+                "nil"
+              ],
+              "answer": 0,
+              "explanation": "Gato < Animal es herencia, y Gato sobrescribe sonido."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué indica @ antes de una variable?",
+              "options": [
+                "Que es una variable de instancia",
+                "Que es global",
+                "Que es constante",
+                "Que es un símbolo"
+              ],
+              "answer": 0,
+              "explanation": "@nombre pertenece a cada objeto."
+            },
+            {
+              "type": "choice",
+              "prompt": "¿Qué crea attr_accessor?",
+              "options": [
+                "Métodos para leer y escribir un atributo",
+                "Una clase nueva",
+                "Una variable global",
+                "Un bloque"
+              ],
+              "answer": 0,
+              "explanation": "attr_accessor :x crea los métodos x y x=."
+            }
+          ]
+        },
+        {
+          "id": "rb-5-2",
+          "title": "Bloques y errores",
+          "exercises": [
+            {
+              "type": "output",
+              "code": "def repetir\n  yield\n  yield\nend\nrepetir { puts \"Hola\" }",
+              "options": [
+                "Hola\nHola",
+                "Hola",
+                "Error",
+                "Nada"
+              ],
+              "answer": 0,
+              "explanation": "yield ejecuta el bloque; aquí se llama dos veces."
+            },
+            {
+              "type": "fill",
+              "prompt": "Captura la división entre cero",
+              "code": "begin\n  1 / 0\n___ ZeroDivisionError\n  puts \"División por cero\"\nend",
+              "options": [
+                "rescue",
+                "catch",
+                "except",
+                "handle"
+              ],
+              "answer": [
+                "rescue"
+              ],
+              "explanation": "En Ruby los errores se capturan con begin / rescue."
+            },
+            {
+              "type": "output",
+              "code": "cuadrado = ->(x) { x * x }\nputs cuadrado.call(5)",
+              "options": [
+                "25",
+                "10",
+                "5",
+                "Error"
+              ],
+              "answer": 0,
+              "explanation": "-> crea una lambda; call la ejecuta."
+            },
+            {
+              "type": "output",
+              "code": "p [3, 1, 2].sort.first",
+              "options": [
+                "1",
+                "3",
+                "[1, 2, 3]",
+                "2"
+              ],
+              "answer": 0,
+              "explanation": "sort ordena y first toma el primero."
+            },
+            {
+              "type": "order",
+              "prompt": "Ordena para capturar el error",
+              "lines": [
+                "begin",
+                "  Integer(\"abc\")",
+                "rescue ArgumentError",
+                "  puts \"No es un número\"",
+                "end"
+              ],
+              "explanation": "Integer(\"abc\") lanza ArgumentError."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
