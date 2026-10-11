@@ -47,12 +47,11 @@ Requiere Android 5.1 o superior. Funciona sin conexión; solo usa internet para 
 
 - [Capacitor 6](https://capacitorjs.com/) + HTML, CSS y JavaScript (módulos ES, sin frameworks).
 - Sin backend: el contenido está en archivos JSON y el progreso se guarda en `localStorage` del teléfono.
-- Diseño basado en `DESIGN (1).md` (colores, tipografía Nunito / Nunito Sans, espaciados y componentes), con modo oscuro.
+- Diseño propio (colores, tipografía Nunito / Nunito Sans, espaciados y componentes), con modo oscuro.
 
 ## Estructura
 
 ```
-├── DESIGN (1).md              guía de diseño
 ├── capacitor.config.json      appId y appName
 ├── package.json
 ├── www/                       la app (lo que va dentro del APK)

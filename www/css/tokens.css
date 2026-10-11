@@ -1,5 +1,5 @@
-/* Tokens de diseño. Fuente: "DESIGN (1).md".
-   Los valores marcados como "añadido" no están en design.md y siguen su misma línea. */
+/* Tokens de diseño.
+   Los valores marcados como "añadido" amplían la paleta base. */
 
 @font-face {
   font-family: "Nunito";
@@ -18,7 +18,7 @@
 }
 
 :root {
-  /* Colores (design.md) */
+  /* Colores */
   --color-eager-green: #58cc02;
   --color-storybook-green: #d7ffb8;
   --color-spark-blue: #1cb0f6;
@@ -34,7 +34,7 @@
   --color-flame: #ff9600;      /* icono de racha */
   --color-bee: #ffc800;        /* icono de XP */
 
-  /* Tipografía: feather -> Nunito, duolingo-sans -> Nunito Sans (sustitutos indicados en design.md) */
+  /* Tipografía: feather -> Nunito, duolingo-sans -> Nunito Sans */
   --font-feather: "Nunito", ui-rounded, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-duolingo-sans: "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-code: ui-monospace, "Cascadia Mono", Consolas, "Roboto Mono", "Droid Sans Mono", monospace; /* añadido */

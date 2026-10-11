@@ -26,3 +26,7 @@ desktop.ini
 .vscode/
 .idea/
 *.log
+
+# Archivos locales de trabajo (no se suben)
+DESIGN (1).md
+AGENTS*.md

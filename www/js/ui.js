@@ -22,7 +22,7 @@ export function setChildren(el, ...children) {
   el.replaceChildren(...children.flat(Infinity).filter((c) => c != null && c !== false));
 }
 
-/* ---------- Iconos (trazo grueso, estilo del design.md) ---------- */
+/* ---------- Iconos (trazo grueso) ---------- */
 const STROKE = {
   x: '<path d="M18 6 6 18M6 6l12 12"/>',
   check: '<path d="M20 6 9 17l-5-5"/>',
